@@ -60,8 +60,18 @@ body {
   border-radius: 50%;
   transform-origin: center;
   transform: translate(-50%, calc(50vh - 50%));
-
+  animation: navSlide 2s ease-out forwards;
 }
+
+@keyframes navSlide {
+  from {
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  } to {
+    transform: translate(-50%, calc(50vh - 50%));
+  }
+}
+
+
 
 .circleContent {
   position: absolute;
@@ -87,7 +97,18 @@ body {
   left: 70%;
   border: 5px solid black;
   font-size: 50px;
+  opacity: 0;
+  animation: titleInitialFadeIn 2s ease-out forwards 2s;
 }
+
+@keyframes titleInitialFadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
 
 
 
@@ -140,28 +161,70 @@ body {
   border-radius: 20px;
   transform: rotateX(60deg) rotateZ(45deg);
   box-shadow: 2px 2px 0px 0px rgba(59, 59, 59, 0.685);
-  transition: 0.5s ease-in-out;
+  /* transition: 1s ease-in-out; */
 }
 
 .stack div:nth-child(1):hover, .stack div:nth-child(2):hover, .stack div:nth-child(3):hover, .stack div:nth-child(4):hover {
   background-color: #ec6b6b;
 }
 
-.stack div:nth-child(1) {
+.card1 {
   background-color: rgba(54, 111, 133, 0.61);
+  animation: card1 1s ease-in;
 }
 
-.stack div:nth-child(2) {
+@keyframes card1 {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
+
+.card2 {
   background-color: rgba(82, 54, 133, 0.61);
   transform: translate(0px, -20px) rotateX(60deg) rotateZ(45deg);
+  animation:
+  card1 1s ease-in,
+  card2 0.5s  linear 1s forwards;
 }
 
-.stack div:nth-child(3) {
+@keyframes card2 {
+  from {
+    transform: translate(0px, 0px) rotateX(60deg) rotateZ(45deg);
+  } to {
+    transform: translate(0px, -20px) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+.card3 {
   background-color: rgba(91, 54, 133, 0.61);
   transform: translate(0, -40px) rotateX(60deg) rotateZ(45deg);
+  animation:
+  card1 1s ease-in,
+  card3 1s  linear 1s forwards;
 }
 
-.stack div:nth-child(4) {
+@keyframes card3 {
+  from {
+    transform: translate(0px, 0px) rotateX(60deg) rotateZ(45deg);
+  } to {
+    transform: translate(0px, -40px) rotateX(60deg) rotateZ(45deg);
+  }
+}
+
+.card4 {
   background-color: rgba(133, 54, 109, 0.61);
   transform: translate(0, -60px) rotateX(60deg) rotateZ(45deg);
+  animation:
+  card1 1s ease-in,
+  card4 1.5s  linear 1s forwards;
+}
+
+@keyframes card4 {
+  from {
+    transform: translate(0px, 0px) rotateX(60deg) rotateZ(45deg);
+  } to {
+    transform: translate(0px, -60px) rotateX(60deg) rotateZ(45deg);
+  }
 }
