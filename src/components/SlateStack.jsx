@@ -6,10 +6,10 @@ const SlateStack = ({ele}) => {
   return (
     <>
       <div className='stack'>
-        {ele === 1 ? <div style={highlight}></div> : <div></div>}
-        {ele === 2 ? <div style={highlight}></div> : <div></div>}
-        {ele === 3 ? <div style={highlight}></div> : <div></div>}
-        {ele === 4 ? <div style={highlight}></div> : <div></div>}
+        {ele === 1 ? <div className='card1' style={highlight}></div> : <div className='card1'></div>}
+        {ele === 4 ? <div className='card2' style={highlight}></div> : <div className='card2'></div>}
+        {ele === 3 ? <div className='card3' style={highlight}></div> : <div className='card3'></div>}
+        {ele === 2 ? <div className='card4' style={highlight}></div> : <div className='card4'></div>}
       </div>
     </>
   )

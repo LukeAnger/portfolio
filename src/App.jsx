@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import SlateStack from './components/SlateStack.jsx'
+import Nav from './components/Nav.jsx'
 
 const App = () => {
 
@@ -70,7 +71,7 @@ const App = () => {
 
 
         </div>
-        <div className='circleNav'></div>
+        <Nav ele={currentEle}/>
       </div>
     </>
   )
