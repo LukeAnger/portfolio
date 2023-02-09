@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
+
+body {
+  font-family: 'Jost';
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #521c68;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.pa {
+  position: absolute;
+}
+.pr {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.fr {
+  display: flex;
+}
+.fc {
+  display: flex;
+  flex-direction: column;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-cen {
+  justify-content: center;
+}
+.ai-fe {
+  align-items: flex-end;
+}
+.ai-cen {
+  align-items: center;
+}
+.ta-cen {
+  text-align: center;
+}
+
+
+
+.circleNav {
+  position: absolute;
+  width: 30%;
+  height: 30vw;
+  background: radial-gradient(ellipse at top, #e66465, transparent),
+  radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  border-radius: 50%;
+  transform-origin: center;
+  transform: translate(-50%, calc(50vh - 50%));
+
+}
+
+.circleContent {
+  position: absolute;
+  width: 175%;
+  height: 175vw;
+  background: radial-gradient(ellipse at top, #e66465, transparent),
+  radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  border-radius: 50%;
+  transform-origin: center;
+  transition: 1s linear;
+}
+
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(75, 69, 69, 0.144);
+}
+
+.title {
+  position: absolute;
+  top: 45%;
+  left: 70%;
+  border: 5px solid black;
+  font-size: 50px;
+}
+
+
+
+.about {
+  position: absolute;
+  top: 78%;
+  left: 55%;
+  font-size: 50px;
+  border: 5px solid black;
+  transform: rotate(90deg);
+}
+
+.projects {
+  position: absolute;
+  top: 58%;
+  left: 15%;
+  font-size: 50px;
+  transform: rotate(180deg);
+  border: 5px solid black;
+}
+
+.experience {
+  position: absolute;
+  top: 19%;
+  left: 34%;
+  font-size: 50px;
+  transform: rotate(270deg);
+  border: 5px solid black;
+
+}
+
+
+
