@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import SlateStack from './components/SlateStack.jsx'
 
 const App = () => {
 
@@ -42,10 +43,12 @@ const App = () => {
     }, 2000);
   }
 
-  console.log(rotation, currentEle)
+
   return (
     <>
-    <div style={{position: 'absolute', right: '25px'}}>{currentEle.toString()}</div>
+    <div style={{position: 'absolute', right: '25px', width: '150px', height: '225px'}}>
+      <SlateStack ele={currentEle}/>
+    </div>
       <div className='pr'>
         <div className='circleContent' style={{transform: `translate(-50%, calc(50vh - 50%)) rotate(${rotation}deg)`}} onWheel={handleScroll} >
 

@@ -67,8 +67,8 @@ body {
   position: absolute;
   width: 175%;
   height: 175vw;
-  background: radial-gradient(ellipse at top, #e66465, transparent),
-  radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  /* background: radial-gradient(ellipse at top, #e664647c, transparent),
+  radial-gradient(ellipse at bottom, #4e9f0c6b, transparent); */
   border-radius: 50%;
   transform-origin: center;
   transition: 2s cubic-bezier(0.3, 0.9, 0.6, 1.05);
@@ -79,7 +79,6 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgba(75, 69, 69, 0.144);
 }
 
 .title {
@@ -122,3 +121,47 @@ body {
 
 
 
+
+
+/* SLATE STACK */
+
+
+.stack {
+  position: absolute;
+  width: 150px;
+  height: 225px;
+  transform: translate(-10vw, 10vh);
+}
+
+.stack div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  transform: rotateX(60deg) rotateZ(45deg);
+  box-shadow: 2px 2px 0px 0px rgba(59, 59, 59, 0.685);
+  transition: 0.5s ease-in-out;
+}
+
+.stack div:nth-child(1):hover, .stack div:nth-child(2):hover, .stack div:nth-child(3):hover, .stack div:nth-child(4):hover {
+  background-color: #ec6b6b;
+}
+
+.stack div:nth-child(1) {
+  background-color: rgba(54, 111, 133, 0.61);
+}
+
+.stack div:nth-child(2) {
+  background-color: rgba(82, 54, 133, 0.61);
+  transform: translate(0px, -20px) rotateX(60deg) rotateZ(45deg);
+}
+
+.stack div:nth-child(3) {
+  background-color: rgba(91, 54, 133, 0.61);
+  transform: translate(0, -40px) rotateX(60deg) rotateZ(45deg);
+}
+
+.stack div:nth-child(4) {
+  background-color: rgba(133, 54, 109, 0.61);
+  transform: translate(0, -60px) rotateX(60deg) rotateZ(45deg);
+}
