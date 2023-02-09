@@ -3,29 +3,49 @@ import React, {useState} from 'react'
 const App = () => {
 
   const [rotation , setRotation] = useState(0);
+  const [scrollDelay, setScrollDelay] = useState(false)
+  const [currentEle, setCurrentEle] = useState(1)
 
-  const prevState = 0;
+
   const handleScroll = (e) => {
+    if (scrollDelay) return;
     let direction = e.nativeEvent.deltaY
 
     if (direction < 0) {
       setRotation(() => (
         rotation + 90
       ))
+      setCurrentEle(() => {
+        if (currentEle === 4) {
+          return currentEle - 3
+        } else {
+          return currentEle + 1
+        }
+      })
     } else {
       setRotation(() => (
         rotation - 90
       ))
+      setCurrentEle(() => {
+        if (currentEle === 1) {
+          return currentEle + 3
+        } else {
+          return currentEle - 1
+        }
+      })
     }
-    // trying to get a smooth scroll from +/- 360 to 0 without doing a full 360 turn
-    // if (rotation === -360 || rotation === 360) {
-    //   setRotation(0)
-    // }
+
+
+    setScrollDelay(true);
+    setTimeout(() => {
+      setScrollDelay(false);
+    }, 2000);
   }
 
-  console.log(rotation)
+  console.log(rotation, currentEle)
   return (
     <>
+    <div style={{position: 'absolute', right: '25px'}}>{currentEle.toString()}</div>
       <div className='pr'>
         <div className='circleContent' style={{transform: `translate(-50%, calc(50vh - 50%)) rotate(${rotation}deg)`}} onWheel={handleScroll} >
 

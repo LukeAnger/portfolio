@@ -71,7 +71,7 @@ body {
   radial-gradient(ellipse at bottom, #4d9f0c, transparent);
   border-radius: 50%;
   transform-origin: center;
-  transition: 2s cubic-bezier(0.3, 0.9, 0.6, 1.05);
+  transition: 1s linear;
 }
 
 .content-wrapper {
