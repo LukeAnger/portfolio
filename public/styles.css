@@ -6,8 +6,17 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #521c68;
+  background-color: #0b5464;
   overflow: hidden;
+  animation: bodyColor 4s ease-out;
+}
+
+@keyframes bodyColor {
+  from {
+    background-color: #3c8b99;
+  } to {
+    background-color: #0b5464;
+  }
 }
 
 #root {
@@ -94,11 +103,10 @@ body {
 .title {
   position: absolute;
   top: 45%;
-  left: 70%;
-  border: 5px solid black;
+  left: 65%;
   font-size: 50px;
-  opacity: 0;
-  animation: titleInitialFadeIn 2s ease-out forwards 2s;
+  transition: 2s ease-out;
+  animation: titleInitialFadeIn 2s ease-out backwards 2s;
 }
 
 @keyframes titleInitialFadeIn {
@@ -117,8 +125,9 @@ body {
   top: 78%;
   left: 55%;
   font-size: 50px;
-  border: 5px solid black;
   transform: rotate(90deg);
+  transition: 3s ease-out;
+
 }
 
 .projects {
@@ -127,7 +136,8 @@ body {
   left: 15%;
   font-size: 50px;
   transform: rotate(180deg);
-  border: 5px solid black;
+  transition: 3s ease-out;
+
 }
 
 .experience {
@@ -136,8 +146,7 @@ body {
   left: 34%;
   font-size: 50px;
   transform: rotate(270deg);
-  border: 5px solid black;
-
+  transition: 3s ease-out;
 }
 
 
@@ -161,7 +170,7 @@ body {
   border-radius: 20px;
   transform: rotateX(60deg) rotateZ(45deg);
   box-shadow: 2px 2px 0px 0px rgba(59, 59, 59, 0.685);
-  /* transition: 1s ease-in-out; */
+  transition: 1s ease-in-out;
 }
 
 .stack div:nth-child(1):hover, .stack div:nth-child(2):hover, .stack div:nth-child(3):hover, .stack div:nth-child(4):hover {
@@ -169,7 +178,7 @@ body {
 }
 
 .card1 {
-  background-color: rgba(54, 111, 133, 0.61);
+  background-color: rgba(45, 52, 94, 0.7);
   animation: card1 1s ease-in;
 }
 
@@ -182,7 +191,7 @@ body {
 }
 
 .card2 {
-  background-color: rgba(82, 54, 133, 0.61);
+  background-color: rgba(99, 92, 33, 0.7);
   transform: translate(0px, -20px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -198,7 +207,7 @@ body {
 }
 
 .card3 {
-  background-color: rgba(91, 54, 133, 0.61);
+  background-color: rgba(95, 22, 23, 0.7);
   transform: translate(0, -40px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,

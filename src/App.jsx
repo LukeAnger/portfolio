@@ -7,7 +7,7 @@ const App = () => {
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
   const [currentEle, setCurrentEle] = useState(1)
-
+  const title = `title fc jc-cen ai-cen`
 
   const handleScroll = (e) => {
     if (scrollDelay) return;
@@ -55,16 +55,26 @@ const App = () => {
 
           <div className='content-wrapper'>
 
-            <div className='title fc jc-cen ai-cen'>
+          {currentEle === 1 ?
+
+          <div className='title fc jc-cen ai-cen'>
 
               <div>Hello, my name is Luke Anger</div>
               <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
+              </div> :
+
+              <div className='title fc jc-cen ai-cen'  style={{opacity: '0'}}>
+
+<div>Hello, my name is Luke Anger</div>
+<div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
 
 
-              </div>
-            <div className='about'>About Me</div>
-            <div className='projects'>Projects</div>
-            <div className='experience'>Experience</div>
+              </div>}
+              {currentEle === 4 ? <div className='about'>About Me</div> : <div className='about' style={{opacity: '0'}}>About Me</div>}
+
+            {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={{opacity: '0'}}>Projects</div>}
+
+            {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={{opacity: '0'}}>Experience</div>}
 
           </div>
 
