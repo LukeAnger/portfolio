@@ -6,7 +6,7 @@ const App = () => {
 
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
-  const [currentEle, setCurrentEle] = useState(1)
+  const [currentEle, setCurrentEle] = useState(4)
   const title = `title fc jc-cen ai-cen`
 
   const handleScroll = (e) => {
