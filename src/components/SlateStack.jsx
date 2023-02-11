@@ -8,6 +8,8 @@ const card1Circuit = () => (
   <div className='node'></div>
   <div className='node'></div>
   <div className='node'></div>
+  <div className='cable'></div>
+  <div className='cable'></div>
   <div className='transistor'></div>
   <div className='transistor'></div> */}
 

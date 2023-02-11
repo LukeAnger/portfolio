@@ -192,7 +192,7 @@ body {
   transform: translate(0px, -20px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
-  card2 0.5s  linear 1s forwards;
+  card2 0.5s  linear 1s backwards;
   /* transform: translateY(200px) !important; */
 }
 
@@ -209,7 +209,7 @@ body {
   transform: translate(0, -40px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
-  card3 1s  linear 1s forwards;
+  card3 1s  linear 1s backwards;
   /* transform: translateY(200px) !important; */
 }
 
@@ -226,7 +226,7 @@ body {
   transform: translate(0, -60px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
-  card4 1.5s  linear 1s forwards;
+  card4 1.5s  linear 1s backwards;
   /* transform: translateY(200px) !important; */
 }
 
@@ -242,6 +242,17 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  background-color: #20b46a;
+}
+
+.transistor {
+  width: 40px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #20b46a;
+}
+
+.cable {
   background-color: #20b46a;
 }
 
@@ -273,4 +284,36 @@ body {
   position: absolute;
   top: 82%;
   left: 43%;
+}
+
+.card1 .cable:nth-child(6) {
+  position: absolute;
+  top: 82%;
+  left: 43%;
+  width: 30px;
+  height: 6px;
+  transform: translate(-25px, 2px);
+  border-bottom-left-radius: 3px;
+}
+
+.card1 .cable:nth-child(7) {
+  position: absolute;
+  top: 82%;
+  left: 43%;
+  width: 33px;
+  height: 6px;
+  transform: translate(-38px, -17px) rotate(90deg);
+}
+
+.card1 .transistor:nth-child(8) {
+  position: absolute;
+  top: 42%;
+  left: 70%;
+  transform: rotate(90deg);
+}
+
+.card1 .transistor:nth-child(9) {
+  position: absolute;
+  top: 60%;
+  left: 14%;
 }
