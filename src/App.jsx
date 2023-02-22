@@ -1,49 +1,57 @@
 import React, {useState} from 'react'
-import SlateStack from './components/SlateStack.jsx'
+import SlateStack from './components/background/SlateStack.jsx'
 import Nav from './components/Nav.jsx'
 
 const App = () => {
 
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
-  const [currentEle, setCurrentEle] = useState(1)
+  const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
+  console.log('MATH: ', ((Math.abs(rotation/360)) % 1) * 4 + 1)
   const title = `title fc jc-cen ai-cen`
+
+  const navButtonHandler = (position) => {
+    console.log('nav button clicked', position-currentEle)
+    setRotation(rotation => rotation - (position-currentEle)*90)
+  }
 
   const handleScroll = (e) => {
     if (scrollDelay) return;
     let direction = e.nativeEvent.deltaY
-
-    if (direction < 0) {
-      setRotation(() => (
-        rotation + 90
-      ))
-      setCurrentEle(() => {
-        if (currentEle === 4) {
-          return currentEle - 3
-        } else {
-          return currentEle + 1
-        }
-      })
-    } else {
+    console.log('direction: ', direction)
+    if (direction > 0) {
+      // rotate counter clockwise 90deg
       setRotation(() => (
         rotation - 90
       ))
-      setCurrentEle(() => {
-        if (currentEle === 1) {
-          return currentEle + 3
-        } else {
-          return currentEle - 1
-        }
-      })
+
+      // if rotation is 360deg, set current element to 1
+      if (currentEle === 1) {
+        return currentEle - 3
+      } else {
+        return currentEle + 1
+      }
+    } else {
+      // rotate clockwise 90deg
+      setRotation(() => (
+        rotation + 90
+      ))
+
+      // if rotation is 360deg, set current element to 4
+      if (currentEle === 4) {
+        return currentEle - 3
+      } else {
+        return currentEle + 1
+      }
     }
 
-
-    setScrollDelay(true);
+    setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
     setTimeout(() => {
       setScrollDelay(false);
     }, 2000);
   }
 
+  console.log('Current Rotation Angle: ', rotation)
 
   return (
     <>
@@ -70,18 +78,21 @@ const App = () => {
 
 
               </div>}
-              {currentEle === 4 ? <div className='about'>About Me</div> : <div className='about' style={{opacity: '0'}}>About Me</div>}
+              {currentEle === 2 ? <div className='about'>Experience</div> : <div className='about' style={{opacity: '0'}}>Experience</div>}
 
             {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={{opacity: '0'}}>Projects</div>}
 
-            {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={{opacity: '0'}}>Experience</div>}
+            {currentEle === 4 ? <div className='experience'>About Me</div> : <div className='experience' style={{opacity: '0'}}>About Me</div>}
 
           </div>
 
 
 
         </div>
-        <Nav ele={currentEle}/>
+        <Nav
+        sectionNumber={currentEle}
+        currentRotation={rotation}
+        navButtonHandler={navButtonHandler}/>
       </div>
     </>
   )
