@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SlateStack from './components/background/SlateStack.jsx'
 import Nav from './components/Nav.jsx'
+import Contact from './components/contact/Contact.jsx'
 
 const App = () => {
 
@@ -9,6 +10,12 @@ const App = () => {
   const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
   console.log('MATH: ', ((Math.abs(rotation/360)) % 1) * 4 + 1)
   const title = `title fc jc-cen ai-cen`
+  const handleScrollDelay = () => {
+    setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
+    setTimeout(() => {
+      setScrollDelay(false);
+    }, 2000);
+  }
 
   const navButtonHandler = (position) => {
     console.log('nav button clicked', position-currentEle)
@@ -27,8 +34,10 @@ const App = () => {
 
       // if rotation is 360deg, set current element to 1
       if (currentEle === 1) {
+        handleScrollDelay();
         return currentEle - 3
       } else {
+        handleScrollDelay();
         return currentEle + 1
       }
     } else {
@@ -39,16 +48,13 @@ const App = () => {
 
       // if rotation is 360deg, set current element to 4
       if (currentEle === 4) {
+        handleScrollDelay();
         return currentEle - 3
       } else {
+        handleScrollDelay();
         return currentEle + 1
       }
     }
-
-    setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
-    setTimeout(() => {
-      setScrollDelay(false);
-    }, 2000);
   }
 
   console.log('Current Rotation Angle: ', rotation)
@@ -78,11 +84,11 @@ const App = () => {
 
 
               </div>}
-              {currentEle === 2 ? <div className='about'>Experience</div> : <div className='about' style={{opacity: '0'}}>Experience</div>}
+              {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={{opacity: '0'}}>Experience</div>}
 
             {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={{opacity: '0'}}>Projects</div>}
 
-            {currentEle === 4 ? <div className='experience'>About Me</div> : <div className='experience' style={{opacity: '0'}}>About Me</div>}
+            {currentEle === 4 ? <Contact /> : <Contact styles={{opacity: '0'}}/>}
 
           </div>
 
