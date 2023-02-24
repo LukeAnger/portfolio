@@ -18,10 +18,10 @@ const Nav = ({sectionNumber, navButtonHandler}) => {
     <>
       <div className='circleNav'>
 
-        {sectionNumber === 4 ? navButton('-62.5', '30px', navButtonHandler, 4) : navButton('-62.5', '5px', navButtonHandler, 4)}
-        {sectionNumber === 3 ? navButton('-20', '30px', navButtonHandler, 3) : navButton('-20', '5px', navButtonHandler, 3)}
-        {sectionNumber === 2 ? navButton('22.5', '30px', navButtonHandler, 2) : navButton('22.5', '5px', navButtonHandler, 2)}
-        {sectionNumber === 1 ? navButton('65', '30px', navButtonHandler, 1) : navButton('65', '5px', navButtonHandler, 1)}
+        {sectionNumber === 4 ? navButton('-62.5', '15%', navButtonHandler, 4) : navButton('-62.5', '3%', navButtonHandler, 4)}
+        {sectionNumber === 3 ? navButton('-20', '15%', navButtonHandler, 3) : navButton('-20', '3%', navButtonHandler, 3)}
+        {sectionNumber === 2 ? navButton('22.5', '15%', navButtonHandler, 2) : navButton('22.5', '3%', navButtonHandler, 2)}
+        {sectionNumber === 1 ? navButton('65', '15%', navButtonHandler, 1) : navButton('65', '3%', navButtonHandler, 1)}
 
         <div className='navCenterCircle'></div>
 

@@ -3,8 +3,8 @@ import React from 'react'
 const Contact = ({styles = {}}) => {
   return (
     <>
-      <div className='contact' style={styles}>
-        <div className='contactTitle'>Contact</div>
+      <div className='contact pa' style={styles}>
+        <div className='contactTitle  holoText'>Contact</div>
         <div className='contactContent'>
           <div className='contactContentLeft'>
             <div className='contactContentLeftTitle'>Email</div>

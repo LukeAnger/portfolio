@@ -2,13 +2,20 @@ import React, {useState} from 'react'
 import SlateStack from './components/background/SlateStack.jsx'
 import Nav from './components/Nav.jsx'
 import Contact from './components/contact/Contact.jsx'
+import Experience from './components/experience/Experience.jsx'
+import Projects from './components/projects/Projects.jsx'
+import Title from './components/about/Title.jsx'
+
+const devScale = 'scale(0.25)'
+const opacity = {opacity: '0'}
+
 
 const App = () => {
 
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
   const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
-  console.log('MATH: ', ((Math.abs(rotation/360)) % 1) * 4 + 1)
+
   const title = `title fc jc-cen ai-cen`
   const handleScrollDelay = () => {
     setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
@@ -61,47 +68,73 @@ const App = () => {
 
   return (
     <>
-    <div style={{position: 'absolute', right: '25px', width: '150px', height: '225px'}}>
+    <div style={{position: 'absolute', right: '0px', width: '150px', height: '225px'}}>
       <SlateStack ele={currentEle}/>
     </div>
-      <div className='pr'>
-        <div className='circleContent' style={{transform: `translate(-50%, calc(50vh - 50%)) rotate(${rotation}deg)`}} onWheel={handleScroll} >
 
-          <div className='content-wrapper'>
+      <div className='pr app' onWheel={handleScroll}>
 
-          {currentEle === 1 ?
-
-          <div className='title fc jc-cen ai-cen'>
-
-              <div>Hello, my name is Luke Anger</div>
-              <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
-              </div> :
-
-              <div className='title fc jc-cen ai-cen'  style={{opacity: '0'}}>
-
-<div>Hello, my name is Luke Anger</div>
-<div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
-
-
-              </div>}
-              {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={{opacity: '0'}}>Experience</div>}
-
-            {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={{opacity: '0'}}>Projects</div>}
-
-            {currentEle === 4 ? <Contact /> : <Contact styles={{opacity: '0'}}/>}
-
-          </div>
-
-
+        <div className='circleContent' style={{transform: `translate(-50%, calc(50vh - 50%)) rotate(${rotation}deg)`}}>
 
         </div>
+
         <Nav
         sectionNumber={currentEle}
         currentRotation={rotation}
         navButtonHandler={navButtonHandler}/>
+
+
+        <div className='content-wrapper'>
+          <div className='content-wrapper-inner'>
+
+            {currentEle === 1 ?
+              <Title /> :
+              <Title styles={opacity}/>}
+
+            {currentEle === 2 ?
+              <Experience /> :
+              <Experience styles={opacity}/>}
+
+            {currentEle === 3 ?
+              <Projects /> :
+              <Projects styles={opacity}/>}
+
+            {currentEle === 4 ?
+              <Contact /> :
+              <Contact styles={opacity}/>}
+
+          </div>
+        </div>
+
       </div>
+
     </>
   )
 }
 
 export default App
+
+
+
+/*
+<div className='content-wrapper'>
+
+            {currentEle === 1 ?
+            <div className='title fc jc-cen ai-cen'>
+              <div>Hello, my name is Luke Anger</div>
+              <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
+            </div> :
+
+            <div className='title fc jc-cen ai-cen' style={opacity}>
+              <div>Hello, my name is Luke Anger</div>
+              <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
+            </div>}
+
+            {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={opacity}>Experience</div>}
+
+            {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={opacity}>Projects</div>}
+
+            {currentEle === 4 ? <Contact /> : <Contact styles={opacity}/>}
+
+          </div>
+*/

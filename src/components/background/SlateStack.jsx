@@ -1,5 +1,5 @@
 import React from 'react'
-import { circuitBoard1, circuit1 } from './svgs.js'
+import { circuitBoard1, circuit1, circuitBoard2, circuit2 } from './svgs.js'
 
 const card1Circuit = () => (
   <>
@@ -18,7 +18,12 @@ const card1Circuit = () => (
 
 )
 
-const slideOut = (num) => ({transform: `translate(-60px, calc(60px - ${30*(num)}px)) rotateX(60deg) rotateZ(45deg)`});
+const slideOut = (num) => (
+  {
+    transform: `translate(-60px, ${60 - 30*(num)}px) rotateX(60deg) rotateZ(45deg)`,
+    boxShadow: '2px 2px 1px 1px green'
+  }
+);
 
 const SlateStack = ({ele}) => {
 
@@ -29,8 +34,8 @@ const SlateStack = ({ele}) => {
         {ele === 1 ?
         <div className='card1 card' style={slideOut(1)}>{circuitBoard1()}{circuit1()}</div> : <div className='card1 card'>{circuitBoard1()}</div>}
         {ele === 2 ?
-        <div className='card2 card' style={slideOut(2)}>{circuitBoard1()}{circuit1()}</div> :
-        <div className='card2 card'>{circuitBoard1()}</div>}
+        <div className='card2 card' style={slideOut(2)}>{circuitBoard2()}{circuit2()}</div> :
+        <div className='card2 card'>{circuitBoard2()}</div>}
         {ele === 3 ?
         <div className='card3 card' style={slideOut(3)}>{circuitBoard1()}{circuit1()}</div> :
         <div className='card3 card'>{circuitBoard1()}</div>}
