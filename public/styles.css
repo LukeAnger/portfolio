@@ -78,6 +78,7 @@ body {
   transform-origin: center;
   transform: translate(-50%, calc(50vh - 50%));
   animation: navSlide 2s ease-out forwards;
+  z-index: 1000;
 }
 
 .navCenterCircle {
