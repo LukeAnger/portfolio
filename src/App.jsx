@@ -8,7 +8,7 @@ import Title from './components/about/Title.jsx'
 
 const devScale = 'scale(0.25)'
 const opacity = {opacity: '0'}
-
+const fadeIn = {transition: '2s ease-in-out'}
 
 const App = () => {
 
@@ -64,12 +64,14 @@ const App = () => {
     }
   }
 
-  console.log('Current Rotation Angle: ', rotation)
-
   return (
     <>
-    <div style={{position: 'absolute', right: '0px', width: '150px', height: '225px'}}>
+    <div className='head-projector'></div>
+    <div className='head-projector'></div>
+    <div className='background' style={{position: 'absolute', right: '0px', width: '150px', height: '225px'}}>
       <SlateStack ele={currentEle}/>
+
+
     </div>
 
       <div className='pr app' onWheel={handleScroll}>
@@ -92,15 +94,15 @@ const App = () => {
               <Title styles={opacity}/>}
 
             {currentEle === 2 ?
-              <Experience /> :
+              <Experience styles={fadeIn}/> :
               <Experience styles={opacity}/>}
 
             {currentEle === 3 ?
-              <Projects /> :
+              <Projects styles={fadeIn}/> :
               <Projects styles={opacity}/>}
 
             {currentEle === 4 ?
-              <Contact /> :
+              <Contact styles={fadeIn}/> :
               <Contact styles={opacity}/>}
 
           </div>

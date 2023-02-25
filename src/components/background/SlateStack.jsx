@@ -40,8 +40,8 @@ const SlateStack = ({ele}) => {
         <div className='card3 card' style={slideOut(3)}>{circuitBoard1()}{circuit1()}</div> :
         <div className='card3 card'>{circuitBoard1()}</div>}
         {ele === 4 ?
-        <div className='card4 card' style={slideOut(4)}>{circuitBoard1()}{circuit1()}</div> :
-        <div className='card4 card'>{circuitBoard1()}</div>
+        <div className='card4 card' style={slideOut(4)}>{circuitBoard2()}{circuit2()}</div> :
+        <div className='card4 card'>{circuitBoard2()}</div>
         }
 
 

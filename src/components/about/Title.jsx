@@ -4,7 +4,7 @@ const Title = ({styles = {}}) => {
 
   return (
     <>
-      <div className='title pa holoTextTitle' style={styles}>
+      <div className='title pa holoText holoTextTitle' style={styles}>
         Luke Anger
       </div>
     </>
