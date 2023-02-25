@@ -133,7 +133,7 @@ body {
 }
 
 .head-projector {
-  --c: #63c9b4c5;
+  --proj: #63c9b528;
   position: absolute;
   width: 5vw;
   height: 5vw;
@@ -147,24 +147,32 @@ body {
 .head-projector:nth-child(1) {
   left: 20%;
   transform: rotateX(-30deg) rotateY(15deg);
-  animation: head-projector 5s ease-out infinite alternate;
-  box-shadow: 0.2rem 0.4rem 2px var(--c);
+  animation: head-projector1 5s ease-in-out infinite alternate;
+  box-shadow: 0.6rem 1rem 2px var(--proj), 1.2rem 2rem 3px 2px var(--proj);
 }
 
 .head-projector:nth-child(2) {
   right: 20%;
   transform: rotateX(-30deg) rotateY(-15deg);
-  animation: head-projector 5s ease-out infinite alternate;
+  animation: head-projector2 5s ease-in-out infinite alternate;
+  box-shadow: -0.6rem 1rem 2px var(--proj), -1.2rem 2rem 3px 2px var(--proj);
 
 }
 
-/* @keyframes head-projector {
+@keyframes head-projector1 {
   from {
-    transform: rotateX(-15deg) rotateY(15deg);
+    transform: rotateX(-30deg) rotateY(45deg);
   } to {
-    transform: rotateX(-15deg) rotateY(-15deg);
+    transform: rotateX(-30deg) rotateY(-15deg);
   }
-} */
+}
+@keyframes head-projector2 {
+  from {
+    transform: rotateX(-30deg) rotateY(15deg);
+  } to {
+    transform: rotateX(-30deg) rotateY(-45deg);
+  }
+}
 
 .content-wrapper-inner {
   position: relative;
