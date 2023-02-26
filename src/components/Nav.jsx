@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 
-
-
 const Nav = ({sectionNumber, navButtonHandler}) => {
-
-  console.log('Nav sectionNumber', sectionNumber)
 
   const navButton = (rotate, move, cb, ele) => (
     <button
-      className='navButton'
+      className={`navButton${ele} navButton`}
       style={{ transform: `rotate(${rotate}deg) translate(${move})` }}
       onClick={() => cb(ele)}>
     </button>

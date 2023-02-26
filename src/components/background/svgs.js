@@ -548,3 +548,7 @@ export const circuit2 = () => (
 </defs>
 </svg>
 )
+
+
+
+
