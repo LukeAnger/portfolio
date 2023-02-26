@@ -110,6 +110,69 @@ body {
 }
 
 
+.navButton1 {
+  transform: rotate(65deg) translate(3%);
+  animation: navButton1 4s linear backwards;
+
+}
+
+.navButton2 {
+  transform: rotate(22.5deg) translate(3%);
+  animation: navButton2 3s linear backwards;
+
+}
+
+.navButton3 {
+  transform: rotate(-20deg) translate(3%);
+  animation: navButton3 3.5s linear backwards;
+
+}
+
+.navButton4 {
+  transform: rotate(-62.5deg) translate(3%);
+  animation: navButton4 4s linear backwards;
+}
+
+@keyframes navButton1 {
+  0%, 50% {
+    transform: rotate(65deg) translate(-15%, 0);
+  } 62.5%, 87.5% {
+    transform: rotate(65deg) translate(3%);
+  } 100% {
+    transform: rotate(65deg) translate(15%);
+  }
+}
+
+@keyframes navButton2 {
+  0%, 66.6666% {
+    transform: rotate(65deg) translate(-15%, 0);
+  } 83.3333% {
+    transform: rotate(65deg) translate(3%);
+  } 100% {
+    transform: rotate(22.5deg) translate(3%);
+  }
+}
+
+@keyframes navButton3 {
+  0%, 57.142857% {
+    transform: rotate(65deg) translate(-15%, 0);
+  } 71.428571% {
+    transform: rotate(65deg) translate(3%);
+  } 100% {
+    transform: rotate(-20deg) translate(3%);
+  }
+}
+
+@keyframes navButton4 {
+  0%, 50% {
+    transform: rotate(65deg) translate(-15%, 0);
+  } 62.5% {
+    transform: rotate(65deg) translate(3%);
+  } 100% {
+    transform: rotate(-62.5deg) translate(3%);
+  }
+}
+
 
 .circleContent {
   position: absolute;
@@ -132,48 +195,6 @@ body {
   height: 100%;
 }
 
-.head-projector {
-  --proj: #63c9b528;
-  position: absolute;
-  width: 5vw;
-  height: 5vw;
-  top: 3%;
-  border-radius: 50%;
-  background-color: #9ee1e4;
-
-  z-index: -100;
-}
-
-.head-projector:nth-child(1) {
-  left: 20%;
-  transform: rotateX(-30deg) rotateY(15deg);
-  animation: head-projector1 5s ease-in-out infinite alternate;
-  box-shadow: 0.6rem 1rem 2px var(--proj), 1.2rem 2rem 3px 2px var(--proj);
-}
-
-.head-projector:nth-child(2) {
-  right: 20%;
-  transform: rotateX(-30deg) rotateY(-15deg);
-  animation: head-projector2 5s ease-in-out infinite alternate;
-  box-shadow: -0.6rem 1rem 2px var(--proj), -1.2rem 2rem 3px 2px var(--proj);
-
-}
-
-@keyframes head-projector1 {
-  from {
-    transform: rotateX(-30deg) rotateY(45deg);
-  } to {
-    transform: rotateX(-30deg) rotateY(-15deg);
-  }
-}
-@keyframes head-projector2 {
-  from {
-    transform: rotateX(-30deg) rotateY(15deg);
-  } to {
-    transform: rotateX(-30deg) rotateY(-45deg);
-  }
-}
-
 .content-wrapper-inner {
   position: relative;
   display: flex;
@@ -184,7 +205,7 @@ body {
 
 .title {
   /* transition: 2s ease-out; */
-  animation: fadeIn 2s ease-out backwards 2s;
+  animation: fadeIn 2s ease-out backwards 8s;
 }
 
 .experience {
@@ -218,7 +239,7 @@ body {
 .holoTextTitle {
 	animation:
     holoText 5s infinite ease-in-out alternate,
-    fadeIn 2s ease-out backwards 2s;
+    fadeIn 1s ease-out backwards 4s;
 }
 
 @keyframes fadeIn {
