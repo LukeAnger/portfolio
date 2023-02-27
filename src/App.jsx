@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import SlateStack from './components/background/SlateStack.jsx'
 import Nav from './components/Nav.jsx'
+import CircleTrack from './components/CircleTrack.jsx'
 import Contact from './components/contact/Contact.jsx'
 import Experience from './components/experience/Experience.jsx'
 import Projects from './components/projects/Projects.jsx'
@@ -15,8 +16,9 @@ const App = () => {
   const [startTouchY, setStartTouchY] = useState(null);
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
-  const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
-
+  const [currentEle, setCurrentEle] = useState(1)
+  // const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
+  console.log('current element: ', currentEle, 'rotation: ', rotation)
   const title = `title fc jc-cen ai-cen`
   const handleScrollDelay = () => {
     setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
@@ -26,7 +28,6 @@ const App = () => {
   }
 
   const navButtonHandler = (position) => {
-    console.log('nav button clicked', position-currentEle)
     setRotation(rotation => rotation - (position-currentEle)*90)
   }
 
@@ -39,28 +40,35 @@ const App = () => {
       setRotation(() => (
         rotation - 90
       ))
-
+        console.log('scrolling down')
       // if rotation is 360deg, set current element to 1
-      if (currentEle === 1) {
+      if (currentEle === 4) {
         handleScrollDelay();
-        return currentEle - 3
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 3)
+        // return currentEle - 3
       } else {
         handleScrollDelay();
-        return currentEle + 1
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 1)
+        // return currentEle + 1
       }
     } else {
       // rotate clockwise 90deg
+      console.log('scrolling up')
       setRotation(() => (
         rotation + 90
       ))
 
       // if rotation is 360deg, set current element to 4
-      if (currentEle === 4) {
+      if (currentEle === 1) {
         handleScrollDelay();
-        return currentEle - 3
+        console.log('test', currentEle + 3)
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 3)
+        // return currentEle + 3
       } else {
         handleScrollDelay();
-        return currentEle + 1
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 1)
+
+        // return currentEle - 1
       }
     }
   }
@@ -79,8 +87,6 @@ const App = () => {
     if (startTouchY !== null) {
       direction = currentTouchY > startTouchY ? 1 : -1;
     }
-
-    setStartTouchY(currentTouchY);
 
     console.log('direction: ', direction);
 
@@ -126,9 +132,8 @@ const App = () => {
 
       <div className='pr app' onWheel={handleScroll} onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd}>
 
-        <div className='circleContent' style={{transform: `translate(-50%, calc(50vh - 50%)) rotate(${rotation}deg)`}}>
+        <CircleTrack rotation={rotation} />
 
-        </div>
 
         <Nav
         sectionNumber={currentEle}
@@ -138,6 +143,7 @@ const App = () => {
 
         <div className='content-wrapper'>
           <div className='content-wrapper-inner'>
+
 
             {currentEle === 1 ?
               <Title /> :
@@ -166,27 +172,3 @@ const App = () => {
 
 export default App
 
-
-
-/*
-<div className='content-wrapper'>
-
-            {currentEle === 1 ?
-            <div className='title fc jc-cen ai-cen'>
-              <div>Hello, my name is Luke Anger</div>
-              <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
-            </div> :
-
-            <div className='title fc jc-cen ai-cen' style={opacity}>
-              <div>Hello, my name is Luke Anger</div>
-              <div style={{fontSize: '1.8rem'}}>I like puzzles, coding and solving problems</div>
-            </div>}
-
-            {currentEle === 2 ? <div className='experience'>Experience</div> : <div className='experience' style={opacity}>Experience</div>}
-
-            {currentEle === 3 ? <div className='projects'>Projects</div> : <div className='projects' style={opacity}>Projects</div>}
-
-            {currentEle === 4 ? <Contact /> : <Contact styles={opacity}/>}
-
-          </div>
-*/
