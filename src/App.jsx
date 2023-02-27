@@ -34,34 +34,20 @@ const App = () => {
   const handleScroll = (e) => {
     if (scrollDelay) return;
     let direction = e.nativeEvent.deltaY
-    if (direction > 0) {
-      // rotate counter clockwise 90deg
-      setRotation(() => (
-        rotation - 90
-      ))
-      // if rotation is 360deg, set current element to 1
-      if (currentEle === 4) {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 3)
-      } else {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 1)
-      }
-    } else {
-      // rotate clockwise 90deg
-      setRotation(() => (
-        rotation + 90
-      ))
-
-      // if rotation is 360deg, set current element to 4
-      if (currentEle === 1) {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 3)
-      } else {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 1)
-      }
+    if (rotation === 0) {
+      direction > 0 ? setRotation(() => rotation - 90) : setRotation(() => rotation + 90)
+      direction < 0 ? setCurrentEle(4) : setCurrentEle(() => currentEle + 1)
+      handleScrollDelay()
+      return;
     }
+      if (direction > 0) {
+        setRotation(() => rotation - 90)
+        currentEle === 4 ? setCurrentEle(1) : setCurrentEle(() => currentEle + 1)
+      } else {
+        setRotation(() => rotation + 90)
+        currentEle === 1 ? setCurrentEle(4) : setCurrentEle(() => currentEle - 1)
+      }
+      handleScrollDelay()
   }
 
   const handleTouchStart = (e) => {
@@ -76,6 +62,7 @@ const App = () => {
     const distance = Math.abs(currentTouchY - startTouchY)
 
     if (distance < 15) return;
+
     let direction = 0;
 
     if (startTouchY !== null) {

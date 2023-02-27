@@ -15,6 +15,7 @@ const Nav = ({sectionNumber, navButtonHandler}) => {
       <div className='circleNav'>
 
         {sectionNumber === 4 ? navButton('-62.5', '15%', navButtonHandler, 4) : navButton('-62.5', '3%', navButtonHandler, 4)}
+
         {sectionNumber === 3 ? navButton('-20', '15%', navButtonHandler, 3) : navButton('-20', '3%', navButtonHandler, 3)}
         {sectionNumber === 2 ? navButton('22.5', '15%', navButtonHandler, 2) : navButton('22.5', '3%', navButtonHandler, 2)}
         {sectionNumber === 1 ? navButton('65', '15%', navButtonHandler, 1) : navButton('65', '3%', navButtonHandler, 1)}

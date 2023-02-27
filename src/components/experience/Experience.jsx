@@ -4,9 +4,18 @@ const Experience = ({styles = {}}) => {
 
   return (
     <>
-      <div className='experience pa holoText' style={styles}>
-        Experience
+      <div className='experience pa ' style={styles}>
+        <div className='holoText experience-head'>Experience</div>
+
+        {/* <div>
+          <div>SEIR</div>
+          <div>Research</div>
+          <div>School</div>
+          <div>Chef</div>
+          <div>Veteran</div>
+        </div> */}
       </div>
+
     </>
   )
 }
