@@ -17,8 +17,7 @@ const App = () => {
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
   const [currentEle, setCurrentEle] = useState(1)
-  // const currentEle = (((Math.abs(rotation/360)) % 1) * 4) + 1;
-  console.log('current element: ', currentEle, 'rotation: ', rotation)
+
   const title = `title fc jc-cen ai-cen`
   const handleScrollDelay = () => {
     setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
@@ -28,32 +27,28 @@ const App = () => {
   }
 
   const navButtonHandler = (position) => {
-    setRotation(rotation => rotation - (position-currentEle)*90)
+    setRotation(rotation => rotation - (position-currentEle)*90);
+    setCurrentEle(position)
   }
 
   const handleScroll = (e) => {
     if (scrollDelay) return;
     let direction = e.nativeEvent.deltaY
-    console.log('direction: ', direction)
     if (direction > 0) {
       // rotate counter clockwise 90deg
       setRotation(() => (
         rotation - 90
       ))
-        console.log('scrolling down')
       // if rotation is 360deg, set current element to 1
       if (currentEle === 4) {
         handleScrollDelay();
         setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 3)
-        // return currentEle - 3
       } else {
         handleScrollDelay();
         setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 1)
-        // return currentEle + 1
       }
     } else {
       // rotate clockwise 90deg
-      console.log('scrolling up')
       setRotation(() => (
         rotation + 90
       ))
@@ -61,14 +56,10 @@ const App = () => {
       // if rotation is 360deg, set current element to 4
       if (currentEle === 1) {
         handleScrollDelay();
-        console.log('test', currentEle + 3)
         setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 3)
-        // return currentEle + 3
       } else {
         handleScrollDelay();
         setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 1)
-
-        // return currentEle - 1
       }
     }
   }
@@ -82,13 +73,14 @@ const App = () => {
     if (scrollDelay) return;
     const touch = e.changedTouches[0];
     const currentTouchY = touch.clientY;
+    const distance = Math.abs(currentTouchY - startTouchY)
+
+    if (distance < 15) return;
     let direction = 0;
 
     if (startTouchY !== null) {
       direction = currentTouchY > startTouchY ? 1 : -1;
     }
-
-    console.log('direction: ', direction);
 
     if (direction > 0) {
       // rotate counter clockwise 90deg
@@ -97,12 +89,12 @@ const App = () => {
       ))
 
       // if rotation is 360deg, set current element to 1
-      if (currentEle === 1) {
+      if (currentEle === 4) {
         handleScrollDelay();
-        return currentEle - 3
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 3)
       } else {
         handleScrollDelay();
-        return currentEle + 1
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 1)
       }
     } else if (direction < 0) {
       // rotate clockwise 90deg
@@ -111,12 +103,12 @@ const App = () => {
       ))
 
       // if rotation is 360deg, set current element to 4
-      if (currentEle === 4) {
+      if (currentEle === 1) {
         handleScrollDelay();
-        return currentEle - 3
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 3)
       } else {
         handleScrollDelay();
-        return currentEle + 1
+        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 1)
       }
     }
   }
