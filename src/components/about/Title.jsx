@@ -1,14 +1,39 @@
 import React from 'react'
 
-const Title = ({styles = {}}) => {
+const Title = ({ele}) => {
 
-  return (
-    <>
-      <div className='title pa holoText holoTextTitle' style={styles}>
-        Luke Anger
-      </div>
-    </>
-  )
+  if (ele === 0) {
+    console.log('on load title')
+    return(
+      <>
+        <div className='title pa '>
+          <h1 className='holoText title-load' style={{animation: 'fadeIn 2s ease-in forwards 4s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
+
+
+
+        </div>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <div className='title pa '>
+          <h1 className='holoText ' style={{animation: 'fadeIn 2s ease-in forwards 1s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
+          {/* <div className='icons' style={{animation: 'fadeIn 2s ease-in forwards 1s'}}>
+            {Icon.reactIcon()}
+            {Icon.javascriptIcon()}
+            {Icon.htmlIcon()}
+            {Icon.cssIcon()}
+            {Icon.expressIcon()}
+            {Icon.nodeIcon()}
+            {Icon.postgreIcon()}
+            {Icon.mongoIcon()}
+          </div> */}
+        </div>
+      </>
+    )
+  }
+
 }
 
 export default Title;

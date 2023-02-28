@@ -1,29 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import SlateStack from './components/background/SlateStack.jsx'
 import Nav from './components/Nav.jsx'
-import CircleTrack from './components/CircleTrack.jsx'
+import CircleTrack from './components/wheel/CircleTrack.jsx'
 import Contact from './components/contact/Contact.jsx'
 import Experience from './components/experience/Experience.jsx'
 import Projects from './components/projects/Projects.jsx'
 import Title from './components/about/Title.jsx'
-
-const devScale = 'scale(0.25)'
-const opacity = {opacity: '0'}
-const fadeIn = {transition: '2s ease-in-out'}
 
 const App = () => {
 
   const [startTouchY, setStartTouchY] = useState(null);
   const [rotation , setRotation] = useState(0);
   const [scrollDelay, setScrollDelay] = useState(false)
-  const [currentEle, setCurrentEle] = useState(1)
+  const [currentEle, setCurrentEle] = useState(0)
 
   const title = `title fc jc-cen ai-cen`
   const handleScrollDelay = () => {
     setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
     setTimeout(() => {
       setScrollDelay(false);
-    }, 2000);
+    }, 1000);
   }
 
   const navButtonHandler = (position) => {
@@ -31,9 +27,20 @@ const App = () => {
     setCurrentEle(position)
   }
 
+  const handleLoadScroll = (dir) => {
+    dir > 0 ? setRotation(() => rotation - 90) : setRotation(() => rotation + 90)
+    dir < 0 ? setCurrentEle(4) : setCurrentEle(2)
+    handleScrollDelay()
+  }
+
   const handleScroll = (e) => {
     if (scrollDelay) return;
     let direction = e.nativeEvent.deltaY
+    if (currentEle === 0) {
+      handleLoadScroll(direction)
+      console.log('test load scroll: ', direction, currentEle)
+      return
+    }
     if (rotation === 0) {
       direction > 0 ? setRotation(() => rotation - 90) : setRotation(() => rotation + 90)
       direction < 0 ? setCurrentEle(4) : setCurrentEle(() => currentEle + 1)
@@ -69,37 +76,24 @@ const App = () => {
       direction = currentTouchY > startTouchY ? 1 : -1;
     }
 
-    if (direction > 0) {
-      // rotate counter clockwise 90deg
-      setRotation(() => (
-        rotation - 90
-      ))
-
-      // if rotation is 360deg, set current element to 1
-      if (currentEle === 4) {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 3)
-      } else {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 1)
-      }
-    } else if (direction < 0) {
-      // rotate clockwise 90deg
-      setRotation(() => (
-        rotation + 90
-      ))
-
-      // if rotation is 360deg, set current element to 4
-      if (currentEle === 1) {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 + 3)
-      } else {
-        handleScrollDelay();
-        setCurrentEle(currentEle => (((Math.abs(rotation/360)) % 1) * 4) + 1 - 1)
-      }
+    if (rotation === 0) {
+      direction > 0 ? setRotation(() => rotation - 90) : setRotation(() => rotation + 90)
+      direction < 0 ? setCurrentEle(4) : setCurrentEle(() => currentEle + 1)
+      handleScrollDelay()
+      return;
     }
+      if (direction > 0) {
+        setRotation(() => rotation - 90)
+        currentEle === 4 ? setCurrentEle(1) : setCurrentEle(() => currentEle + 1)
+      } else {
+        setRotation(() => rotation + 90)
+        currentEle === 1 ? setCurrentEle(4) : setCurrentEle(() => currentEle - 1)
+      }
+      handleScrollDelay()
+
   }
 
+  // useEffect(() => setCurrentEle(1), [])
 
   return (
     <>
@@ -123,22 +117,24 @@ const App = () => {
         <div className='content-wrapper'>
           <div className='content-wrapper-inner'>
 
-
+            {currentEle === 0 ?
+              <Title ele={0}/> :
+              null }
             {currentEle === 1 ?
               <Title /> :
-              <Title styles={opacity}/>}
+              null }
 
             {currentEle === 2 ?
-              <Experience styles={fadeIn}/> :
-              <Experience styles={opacity}/>}
+              <Experience /> :
+              null }
 
             {currentEle === 3 ?
-              <Projects styles={fadeIn}/> :
-              <Projects styles={opacity}/>}
+              <Projects /> :
+              null }
 
             {currentEle === 4 ?
-              <Contact styles={fadeIn}/> :
-              <Contact styles={opacity}/>}
+              <Contact /> :
+              null }
 
           </div>
         </div>

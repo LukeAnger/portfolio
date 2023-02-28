@@ -240,27 +240,25 @@ body {
 }
 
 .title {
-  /* transition: 2s ease-out; */
-  animation: fadeIn 2s ease-out backwards 8s;
+
 }
 
 .experience {
 
-  /* transition: 2s ease-out; */
+
 }
 
 .projects {
 
-  /* transition: 2s ease-out; */
-
 }
 
 .contact {
-  /* transition: 2s ease-out; */
 }
 
 
-
+.section-header {
+  transition: 2s ease-in 2s;
+}
 
 
 
@@ -274,20 +272,13 @@ body {
 	text-shadow: 0.2rem -0.4rem var(--c), 0.4rem -0.8rem var(--c), 0.6rem -1.2rem var(--c), 1.5rem -3rem 5px var(--c), 3rem -4.5rem 10px var(--c);
 	padding: 0.25rem 0.5rem 0.5rem;
 	transform: skew(-5deg);
+  opacity: 0;
 	animation:
     holoText 5s infinite ease-in-out alternate;
 }
 
-.holoTextTitle {
-	animation:
-    holoText 5s infinite ease-in-out alternate,
-    fadeIn 1s ease-out backwards 4s;
-}
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
+  to {
     opacity: 1;
   }
 }
@@ -404,6 +395,305 @@ body {
 
 
 
+
+/*************************************************************/
+/**********************   Skill Icons   **********************/
+/*************************************************************/
+
+
+#reactIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch1 8s ease-in-out infinite;
+}
+
+#javascriptIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 8s ease-in-out infinite;
+}
+
+#htmlIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch1 9s ease-in-out infinite;
+}
+
+#cssIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 7s ease-in-out infinite;
+}
+
+#expressIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 6s ease-in-out infinite;
+}
+
+#nodeIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 10s linear infinite;
+}
+
+#mongoIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 11s ease-in-out infinite;
+}
+
+#postgreIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 7.5s ease-in-out infinite;
+}
+
+.icons {
+  position: relative;
+  width: 25vw;
+  height: 25svh;
+  transform: translate(0, 25svh);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards 4s;
+}
+
+
+.skillIcon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-container1 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -150%);
+}
+
+.icon-container1::after {
+  content: 'React';
+  color: #61DAFB;
+  text-shadow: 0px 0px 6px #61DAFB;
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container1:hover::after {
+  display: block;
+}
+
+.icon-container2 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -200%);
+}
+
+.icon-container2::after {
+  content: 'Javascript';
+  color: rgb(255 220 49 / 50%);
+  text-shadow: 0px 0px 6px rgb(255 220 49 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container2:hover::after {
+  display: block;
+}
+
+.icon-container3 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, -150%);
+}
+
+.icon-container3::after {
+  content: 'HTML5';
+  color: rgb(255 84 36 / 50%);
+  text-shadow: 0 0 6px rgb(255 84 36 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container3:hover::after {
+  display: block;
+}
+
+.icon-container4 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(200%, 0%);
+}
+
+.icon-container4::after {
+  content: 'CSS3';
+  color: rgb(0 147 255 / 50%);
+  text-shadow: 0 0 6px rgb(0 147 255 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container4:hover::after {
+  display: block;
+}
+
+.icon-container5 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, 150%);
+}
+
+.icon-container5::after {
+  content: 'Express';
+  color: rgb(151 151 151 / 50%);
+  text-shadow: 0 0 6px rgb(151 151 151 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container5:hover::after {
+  display: block;
+}
+
+.icon-container6 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 200%);
+}
+
+.icon-container6::after {
+  content: 'Node.js';
+  color: rgb(0 255 0 / 50%);
+  text-shadow: 0 0 6px rgb(0 255 0 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container6:hover::after {
+  display: block;
+}
+
+.icon-container7 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, 150%);
+}
+
+.icon-container7::after {
+  content: 'PostgreSQL';
+  color: rgb(93 134 255 / 50%);
+  text-shadow: 0 0 6px rgb(93 134 255 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container7:hover::after {
+  display: block;
+}
+
+.icon-container8 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, 0%);
+}
+
+.icon-container8::after {
+  content: 'MongoDB';
+  color: rgb(0 255 0 / 50%);
+  text-shadow: 0 0 6px rgb(0 255 0 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.icon-container8:hover::after {
+  display: block;
+}
+
+@keyframes glitch1 {
+  11% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 25% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 37% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 49% {
+    filter: drop-shadow(1px 0px 1px white)
+  } 61% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 74% {
+    filter: drop-shadow(1px -1px 1px white)
+  } 86% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 100% {
+    filter: drop-shadow(1px 0px 1px white)
+  }
+}
+
+@keyframes glitch2 {
+  11% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 25% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 37% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 49% {
+    filter: drop-shadow(1px 0px 1px white)
+  } 61% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 74% {
+    filter: drop-shadow(0px 1px 1px white)
+  } 86% {
+    filter: drop-shadow(1px -1px 1px white)
+  } 100% {
+    filter: drop-shadow(-1px 1px 1px white)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1080px) {
   .stack {
   transform: translate(-2vw, 0vh) scale(.6);
@@ -417,6 +707,9 @@ body {
       text-shadow: -0.15rem -0.25rem var(--c), -0.25rem -0.6rem var(--c), -0.3rem -0.8rem var(--c), -1rem -2rem var(--c), -2rem -4rem 10px var(--c);
     transform: skew(10deg);
     }
+  }
+  .icons {
+    transform: translate() scale(0.8);
   }
 }
 
@@ -434,7 +727,9 @@ body {
       transform: skew(10deg);
     }
   }
-
+  .icons {
+    transform: translate() scale(0.7);
+  }
 }
 
 
@@ -465,7 +760,14 @@ body {
   .head-projector:nth-child(2) {
     right: 10%
   }
-
+  .icons {
+    transform: translate(185vw, 75svh) scale(0.6);
+  }
 }
+
+
+
+
+
 
 
