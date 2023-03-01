@@ -1,5 +1,8 @@
 import React from 'react'
+import Skills from './Skills.jsx'
 
+const loadStyle={animation: 'fadeIn 0.5s ease-in forwards 4s'}
+const scrollStyle={animation: 'fadeIn 0.5s ease-in forwards 1s'}
 const Title = ({ele}) => {
 
   if (ele === 0) {
@@ -9,7 +12,7 @@ const Title = ({ele}) => {
         <div className='title pa '>
           <h1 className='holoText title-load' style={{animation: 'fadeIn 2s ease-in forwards 4s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
 
-
+          <Skills styles={loadStyle}/>
 
         </div>
       </>
@@ -19,16 +22,7 @@ const Title = ({ele}) => {
       <>
         <div className='title pa '>
           <h1 className='holoText ' style={{animation: 'fadeIn 2s ease-in forwards 1s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
-          {/* <div className='icons' style={{animation: 'fadeIn 2s ease-in forwards 1s'}}>
-            {Icon.reactIcon()}
-            {Icon.javascriptIcon()}
-            {Icon.htmlIcon()}
-            {Icon.cssIcon()}
-            {Icon.expressIcon()}
-            {Icon.nodeIcon()}
-            {Icon.postgreIcon()}
-            {Icon.mongoIcon()}
-          </div> */}
+          <Skills  styles={scrollStyle}/>
         </div>
       </>
     )

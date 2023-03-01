@@ -446,8 +446,9 @@ body {
   width: 25vw;
   height: 25svh;
   transform: translate(0, 25svh);
+  z-index: 1;
   opacity: 0;
-  animation: fadeIn 0.5s ease-in forwards 4s;
+
 }
 
 
@@ -455,6 +456,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.5s linear;
 }
 
 .icon-container1 {
@@ -474,6 +476,7 @@ body {
   bottom: -30%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container1:hover::after {
@@ -486,6 +489,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(0%, -200%);
+
 }
 
 .icon-container2::after {
@@ -497,6 +501,7 @@ body {
   bottom: -35%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container2:hover::after {
@@ -520,6 +525,7 @@ body {
   bottom: -35%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container3:hover::after {
@@ -543,6 +549,7 @@ body {
   bottom: -35%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container4:hover::after {
@@ -566,6 +573,7 @@ body {
   bottom: -15%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container5:hover::after {
@@ -589,6 +597,7 @@ body {
   bottom: -35%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container6:hover::after {
@@ -612,6 +621,7 @@ body {
   bottom: -30%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container7:hover::after {
@@ -635,6 +645,7 @@ body {
   bottom: -30%;
   left: 50%;
   transform: translate(-50%);
+  transition: 1s linear;
 }
 
 .icon-container8:hover::after {
@@ -761,7 +772,7 @@ body {
     right: 10%
   }
   .icons {
-    transform: translate(185vw, 75svh) scale(0.6);
+    transform: translate(110vw, 45svh) scale(0.6);
   }
 }
 
