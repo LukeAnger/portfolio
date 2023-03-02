@@ -31,7 +31,7 @@ const SlateStack = ({ele}) => {
   return (
     <>
       <div className='stack'>
-        {ele === 1 ?
+        {ele === 1 || ele === 0 ?
         <div className='card1 card' style={slideOut(1)}>{circuitBoard1()}{circuit1()}</div> : <div className='card1 card'>{circuitBoard1()}</div>}
         {ele === 2 ?
         <div className='card2 card' style={slideOut(2)}>{circuitBoard2()}{circuit2()}</div> :

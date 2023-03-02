@@ -70,6 +70,13 @@ body {
 
 
 
+/*************************************************************/
+/*************************************************************/
+/**********************   Nav  Button   **********************/
+/*************************************************************/
+/*************************************************************/
+
+
 .circleNav {
   position: absolute;
   width: 30%;
@@ -78,7 +85,7 @@ body {
   radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
   border-radius: 50%;
   transform-origin: center;
-  transform: translate(-50%, calc(50vh - 50%));
+  transform: translate(calc(50vw - 50%), -50%) rotate(90deg);
   animation: navSlide 2s ease-out forwards;
   z-index: 1000;
 }
@@ -112,19 +119,18 @@ body {
   transition: 0.5s;
 }
 
-@keyframes navSlide {
+/* @keyframes navSlide {
   from {
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
   } to {
-    transform: translate(-50%, calc(50vh - 50%));
+    transform: translate(calc(50vw - 50%), -50%) rotate(90deg);
   }
-}
+} */
 
 
 .navButton1 {
   transform: rotate(65deg) translate(3%);
   animation: navButton1 4s linear backwards;
-
 }
 
 .navButton2 {
@@ -236,7 +242,7 @@ body {
   display: flex;
 	justify-content: center;
   width: 70%;
-  height: 90%;
+  height: 75%;
 }
 
 .title {
@@ -395,11 +401,11 @@ body {
 
 
 
-
+/*************************************************************/
 /*************************************************************/
 /**********************   Skill Icons   **********************/
 /*************************************************************/
-
+/*************************************************************/
 
 #reactIcon {
   filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
@@ -448,7 +454,6 @@ body {
   transform: translate(0, 25svh);
   z-index: 1;
   opacity: 0;
-
 }
 
 
@@ -457,6 +462,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s linear;
+}
+
+.iconProjector1 {
+  box-shadow:
+    0px -60px 20px 2px rgb(97 218 251 / 25%),
+    0px -40px 12px 1px rgb(97 218 251 / 30%),
+    0px -25px 10px 0px rgb(97 218 251 / 35%);
+  transform: translate(-25%, -25%) rotate(-45deg) rotateX(30deg);
 }
 
 .icon-container1 {
@@ -481,6 +494,14 @@ body {
 
 .icon-container1:hover::after {
   display: block;
+}
+
+.iconProjector2 {
+  box-shadow:
+  0px -60px 20px 2px rgb(255 220 49 / 25%),
+  0px -40px 12px 1px rgb(255 220 49 / 30%),
+  0px -25px 10px 0px rgb(255 220 49 / 35%);
+  transform: translate(150%, -100%) rotateX(30deg);
 }
 
 .icon-container2 {
@@ -508,6 +529,14 @@ body {
   display: block;
 }
 
+.iconProjector3 {
+  box-shadow:
+    0px -60px 20px 2px rgb(255 84 36 / 25%),
+    0px -40px 12px 1px rgb(255 84 36 / 30%),
+    0px -25px 10px 0px rgb(255 84 36 / 35%);
+  transform: translate(325%, -25%) rotate(45deg) rotateX(30deg);
+}
+
 .icon-container3 {
   width: 64px;
   height: 64px;
@@ -530,6 +559,14 @@ body {
 
 .icon-container3:hover::after {
   display: block;
+}
+
+.iconProjector4 {
+  box-shadow:
+    0px -60px 24px 1px rgb(0 147 255 / 25),
+    0px -40px 12px 1px rgb(0 147 255 / 30%),
+    0px -25px 10px 0px rgb(0 147 255 / 35%);
+  transform: translate(400%, 150%) rotate(90deg) rotateX(30deg);
 }
 
 .icon-container4 {
@@ -556,6 +593,14 @@ body {
   display: block;
 }
 
+.iconProjector5 {
+  box-shadow:
+    0px -60px 20px 2px rgb(151 151 151 / 25%),
+    0px -40px 12px 1px rgb(151 151 151 / 30%),
+    0px -25px 10px 0px rgb(151 151 151 / 35%);
+  transform: translate(325%, 325%) rotate(135deg) rotateX(30deg);
+}
+
 .icon-container5 {
   width: 64px;
   height: 64px;
@@ -578,6 +623,14 @@ body {
 
 .icon-container5:hover::after {
   display: block;
+}
+
+.iconProjector6 {
+  box-shadow:
+    0px -60px 20px 2px rgb(0 255 0 / 25%),
+    0px -40px 12px 1px rgb(0 255 0 / 30%),
+    0px -25px 10px 0px rgb(0 255 0 / 35%);
+  transform: translate(150%, 400%) rotate(180deg) rotateX(30deg);
 }
 
 .icon-container6 {
@@ -604,6 +657,14 @@ body {
   display: block;
 }
 
+.iconProjector7 {
+  box-shadow:
+    0px -60px 20px 2px rgb(93 134 255 / 25%),
+    0px -40px 12px 1px rgb(93 134 255 / 30%),
+    0px -25px 10px 0px rgb(93 134 255 / 35%);
+  transform: translate(-25%, 325%) rotate(225deg) rotateX(30deg);
+}
+
 .icon-container7 {
   width: 64px;
   height: 64px;
@@ -626,6 +687,14 @@ body {
 
 .icon-container7:hover::after {
   display: block;
+}
+
+.iconProjector8 {
+  box-shadow:
+    0px -60px 20px 2px rgb(0 255 0 / 25%),
+    0px -40px 12px 1px rgb(0 255 0 / 30%),
+    0px -25px 10px 0px rgb(0 255 0 / 35%);
+  transform: translate(-100%, 150%) rotate(270deg) rotateX(30deg);
 }
 
 .icon-container8 {
