@@ -79,8 +79,8 @@ body {
 
 .circleNav {
   position: absolute;
-  width: 30%;
-  height: 30vw;
+  width: 30vh;
+  height: 30vh;
   /* background: radial-gradient(ellipse at top, #e66465, transparent),
   radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
   border-radius: 50%;
@@ -193,11 +193,8 @@ body {
 
 .circleContent {
   position: absolute;
-  width: 175%;
-  height: 175vw;
-  /* border: 1px solid #00ffea8c; */
-  /* background: radial-gradient(ellipse at top, #e66465, transparent),
-  radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
+  width: 50dvh;
+  height: 50dvh;
   box-shadow: 0px 0px 40px 10px #00f7ffc4;
   border-radius: 50%;
   transform-origin: center;
@@ -206,27 +203,6 @@ body {
   opacity: 0;
   animation: fadeIn 2s ease-out forwards;
 }
-
-/* .circleContent svg:nth-child(1) {
-  transform: scale(0.2) translate(400vw, 0px);
-  background: white;
-}
-
-.circleContent svg:nth-child(2) {
-  transform: scale(0.2) translate(600vw, 0px);
-  background: red;
-}
-
-.circleContent svg:nth-child(3) {
-  transform: scale(0.2) translate(0vw, 600vw);
-  background: yellow;
-}
-
-.circleContent svg:nth-child(4) {
-  transform: scale(0.2) translate(0vw, 400vw);
-  background: green;
-} */
-
 
 .content-wrapper {
   position: relative;
@@ -449,27 +425,42 @@ body {
 
 .icons {
   position: relative;
-  width: 25vw;
-  height: 25svh;
-  transform: translate(0, 25svh);
+  width: 320px;
+  height: 320px;
   z-index: 1;
   opacity: 0;
+  animation:
+    rotate360 16s linear infinite 4.5s,
+    fadeIn 0.5s ease-in forwards 4s;
 }
 
-
-.skillIcon {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.5s linear;
+@keyframes rotate360 {
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+.icons-container {
+  width: 80%;
+}
+
 
 .iconProjector1 {
   box-shadow:
     0px -60px 20px 2px rgb(97 218 251 / 25%),
     0px -40px 12px 1px rgb(97 218 251 / 30%),
     0px -25px 10px 0px rgb(97 218 251 / 35%);
-  transform: translate(-25%, -25%) rotate(-45deg) rotateX(30deg);
+  transform: translate(-225%, -225%) rotate(-45deg) rotateX(30deg);
+  /* animation:
+    icon-projector1 16s linear infinite 4.5s; */
+}
+
+@keyframes icon-projector1 {
+  from {
+    transform: translate(-225%, -225%) rotate(-45deg) rotateX(30deg);
+  } to {
+    transform: translate(-225%, -225%) rotate(-405deg) rotateX(30deg);
+  }
 }
 
 .icon-container1 {
@@ -477,7 +468,17 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(-150%, -150%);
+  transform: translate(-200%, -200%);
+  animation:
+    icon-container1 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container1 {
+  from {
+    transform: translate(-200%, -200%);
+  } to {
+    transform: translate(-200%, -200%) rotate(-360deg);
+  }
 }
 
 .icon-container1::after {
@@ -490,18 +491,21 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container1 16s linear infinite 4.5s;
 }
 
 .icon-container1:hover::after {
   display: block;
 }
 
+
 .iconProjector2 {
   box-shadow:
   0px -60px 20px 2px rgb(255 220 49 / 25%),
   0px -40px 12px 1px rgb(255 220 49 / 30%),
   0px -25px 10px 0px rgb(255 220 49 / 35%);
-  transform: translate(150%, -100%) rotateX(30deg);
+  transform: translate(-50%, -300%) rotateX(30deg);
 }
 
 .icon-container2 {
@@ -509,8 +513,17 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(0%, -200%);
+  transform: translate(-50%, -250%);
+  animation: icon-container2 16s linear infinite 4.5s;
 
+}
+
+@keyframes icon-container2 {
+  from {
+    transform: translate(-50%, -250%);
+  } to {
+    transform: translate(-50%, -250%) rotate(-360deg);
+  }
 }
 
 .icon-container2::after {
@@ -523,6 +536,8 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container2 16s linear infinite 4.5s;
 }
 
 .icon-container2:hover::after {
@@ -534,7 +549,7 @@ body {
     0px -60px 20px 2px rgb(255 84 36 / 25%),
     0px -40px 12px 1px rgb(255 84 36 / 30%),
     0px -25px 10px 0px rgb(255 84 36 / 35%);
-  transform: translate(325%, -25%) rotate(45deg) rotateX(30deg);
+  transform: translate(125%, -225%) rotate(45deg) rotateX(30deg);
 }
 
 .icon-container3 {
@@ -542,7 +557,16 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(150%, -150%);
+  transform: translate(100%, -200%);
+  animation: icon-container3 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container3 {
+  from {
+    transform: translate(100%, -200%);
+  } to {
+    transform: translate(100%, -200%) rotate(-360deg);
+  }
 }
 
 .icon-container3::after {
@@ -555,6 +579,8 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container3 16s linear infinite 4.5s;
 }
 
 .icon-container3:hover::after {
@@ -566,7 +592,7 @@ body {
     0px -60px 24px 1px rgb(0 147 255 / 25),
     0px -40px 12px 1px rgb(0 147 255 / 30%),
     0px -25px 10px 0px rgb(0 147 255 / 35%);
-  transform: translate(400%, 150%) rotate(90deg) rotateX(30deg);
+  transform: translate(200%, -50%) rotate(90deg) rotateX(30deg);
 }
 
 .icon-container4 {
@@ -574,7 +600,16 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(200%, 0%);
+  transform: translate(150%, -50%);
+  animation: icon-container4 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container4 {
+  from {
+    transform: translate(150%, -50%);
+  } to {
+    transform: translate(150%, -50%) rotate(-360deg);
+  }
 }
 
 .icon-container4::after {
@@ -587,6 +622,8 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container4 16s linear infinite 4.5s;
 }
 
 .icon-container4:hover::after {
@@ -598,7 +635,7 @@ body {
     0px -60px 20px 2px rgb(151 151 151 / 25%),
     0px -40px 12px 1px rgb(151 151 151 / 30%),
     0px -25px 10px 0px rgb(151 151 151 / 35%);
-  transform: translate(325%, 325%) rotate(135deg) rotateX(30deg);
+  transform: translate(125%, 125%) rotate(135deg) rotateX(30deg);
 }
 
 .icon-container5 {
@@ -606,7 +643,16 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(150%, 150%);
+  transform: translate(100%, 100%);
+  animation: icon-container5 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container5 {
+  from {
+    transform: translate(100%, 100%);
+  } to {
+    transform: translate(100%, 100%) rotate(-360deg);
+  }
 }
 
 .icon-container5::after {
@@ -619,6 +665,8 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container5 16s linear infinite 4.5s;
 }
 
 .icon-container5:hover::after {
@@ -630,7 +678,7 @@ body {
     0px -60px 20px 2px rgb(0 255 0 / 25%),
     0px -40px 12px 1px rgb(0 255 0 / 30%),
     0px -25px 10px 0px rgb(0 255 0 / 35%);
-  transform: translate(150%, 400%) rotate(180deg) rotateX(30deg);
+  transform: translate(-50%, 200%) rotate(180deg) rotateX(30deg);
 }
 
 .icon-container6 {
@@ -638,7 +686,16 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(0%, 200%);
+  transform: translate(-50%, 150%);
+  animation: icon-container6 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container6 {
+  from {
+    transform: translate(-50%, 150%);
+  } to {
+    transform: translate(-50%, 150%) rotate(-360deg);
+  }
 }
 
 .icon-container6::after {
@@ -662,7 +719,7 @@ body {
     0px -60px 20px 2px rgb(93 134 255 / 25%),
     0px -40px 12px 1px rgb(93 134 255 / 30%),
     0px -25px 10px 0px rgb(93 134 255 / 35%);
-  transform: translate(-25%, 325%) rotate(225deg) rotateX(30deg);
+  transform: translate(-225%, 125%) rotate(225deg) rotateX(30deg);
 }
 
 .icon-container7 {
@@ -670,7 +727,17 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(-150%, 150%);
+  transform: translate(-200%, 100%);
+  animation:
+    icon-container7 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container7 {
+  from {
+    transform: translate(-200%, 100%);
+  } to {
+    transform: translate(-200%, 100%) rotate(-360deg);
+  }
 }
 
 .icon-container7::after {
@@ -683,6 +750,8 @@ body {
   left: 50%;
   transform: translate(-50%);
   transition: 1s linear;
+  animation:
+    icon-container7 16s linear infinite 4.5s;
 }
 
 .icon-container7:hover::after {
@@ -694,7 +763,7 @@ body {
     0px -60px 20px 2px rgb(0 255 0 / 25%),
     0px -40px 12px 1px rgb(0 255 0 / 30%),
     0px -25px 10px 0px rgb(0 255 0 / 35%);
-  transform: translate(-100%, 150%) rotate(270deg) rotateX(30deg);
+  transform: translate(-300%, -50%) rotate(270deg) rotateX(30deg);
 }
 
 .icon-container8 {
@@ -702,7 +771,17 @@ body {
   height: 64px;
   top: 50%;
   left: 50%;
-  transform: translate(-200%, 0%);
+  transform: translate(-250%, -50%);
+  animation:
+    icon-container8 16s linear infinite 4.5s;
+}
+
+@keyframes icon-container8 {
+  from {
+    transform: translate(-250%, -50%);
+  } to {
+    transform: translate(-250%, -50%) rotate(-360deg);
+  }
 }
 
 .icon-container8::after {
@@ -716,6 +795,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
 }
+
 
 .icon-container8:hover::after {
   display: block;
