@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+:root {
+  --fontButton: 'Share Tech Mono', monospace;
+}
 
 * {
 	margin: 0;
@@ -19,14 +23,14 @@ body {
   animation: bodyColor 4s ease-out;
 }
 
-@keyframes bodyColor {
+/* @keyframes bodyColor {
   from {
     background-color: #3c8b99;
   } to {
     background-color: rgba(10, 12, 18, 1);
 
   }
-}
+} */
 
 #root {
   width: 100%;
@@ -79,8 +83,8 @@ body {
 
 .circleNav {
   position: absolute;
-  width: 30vh;
-  height: 30vh;
+  width: 12vh;
+  height: 12vh;
   /* background: radial-gradient(ellipse at top, #e66465, transparent),
   radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
   border-radius: 50%;
@@ -113,7 +117,7 @@ body {
   height: 100%;
   border: none;
   border-radius: 50%;
-  background-color: #00ffff65;
+  background-color: #ffffff65;
   cursor: pointer;
   clip-path: polygon(50% 50%, 100% 33.75%, 100% 66.25%);
   transition: 0.5s;
@@ -193,9 +197,9 @@ body {
 
 .circleContent {
   position: absolute;
-  width: 50dvh;
-  height: 50dvh;
-  box-shadow: 0px 0px 40px 10px #00f7ffc4;
+  width: 20svh;
+  height: 20svh;
+  box-shadow: 0px 0px 20px 5px #00f7ffc4;
   border-radius: 50%;
   transform-origin: center;
   transition: 2s linear;
@@ -218,23 +222,54 @@ body {
   display: flex;
 	justify-content: center;
   width: 70%;
-  height: 75%;
+  height: 90%;
 }
 
 .title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
+}
 
+.title h4 {
+  font-family: 'Share Tech Mono', monospace;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  border: 2px solid white;
+  border-radius: 1rem;
+  text-indent: 1rem;
 }
 
 .experience {
 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  gap: 5%;
 }
 
 .projects {
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
 }
 
 .contact {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
 }
 
 
@@ -273,7 +308,11 @@ body {
 }
 
 
-/* SLATE STACK */
+/*************************************************************/
+/*************************************************************/
+/**********************   Slate Stack   **********************/
+/*************************************************************/
+/*************************************************************/
 
 .stack {
   position: absolute;
@@ -283,7 +322,33 @@ body {
   transition: 0.5s linear;
 }
 
+.cardReaderScene {
+  height: 100%;
+  width: 100%;
+  perspective: 100px;
 
+}
+
+.cardReader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform: translate(-100px) rotateY(30deg) ;
+  justify-content: space-evenly;
+}
+
+.cardReader button {
+  border: 1px 0px black;
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: var(--fontButton);
+}
 
 .card {
   width: 100%;
@@ -296,7 +361,7 @@ body {
 }
 
 .card1 {
-  background-color: rgba(0, 255, 200, 0.363);
+  background-color: #1af9ff80;
   animation:
     card1 1s ease-in,
     card1Initial 1s linear backwards;
@@ -325,7 +390,7 @@ body {
 }
 
 .card2 {
-  background-color: rgba(0, 217, 255, 0.473);
+  background-color: #00bb9078;
   transform: translate(0px, -30px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -342,7 +407,7 @@ body {
 }
 
 .card3 {
-  background-color: rgba(0, 255, 136, 0.452);
+  background-color: #0f5ff37a;
   transform: translate(0, -60px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -359,7 +424,7 @@ body {
 }
 
 .card4 {
-  background-color: rgba(62, 168, 255, 0.61);
+  background-color: #a644ff9e;
   transform: translate(0, -90px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -430,7 +495,7 @@ body {
   z-index: 1;
   opacity: 0;
   animation:
-    rotate360 16s linear infinite 4.5s,
+    rotate360 32s linear infinite 4.5s,
     fadeIn 0.5s ease-in forwards 4s;
 }
 
@@ -441,7 +506,7 @@ body {
 }
 
 .icons-container {
-  width: 80%;
+
 }
 
 
@@ -452,7 +517,7 @@ body {
     0px -25px 10px 0px rgb(97 218 251 / 35%);
   transform: translate(-225%, -225%) rotate(-45deg) rotateX(30deg);
   /* animation:
-    icon-projector1 16s linear infinite 4.5s; */
+    icon-projector1 32s linear infinite 4.5s; */
 }
 
 @keyframes icon-projector1 {
@@ -470,7 +535,7 @@ body {
   left: 50%;
   transform: translate(-200%, -200%);
   animation:
-    icon-container1 16s linear infinite 4.5s;
+    icon-container1 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container1 {
@@ -492,7 +557,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container1 16s linear infinite 4.5s;
+    icon-container1 32s linear infinite 4.5s;
 }
 
 .icon-container1:hover::after {
@@ -514,7 +579,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -250%);
-  animation: icon-container2 16s linear infinite 4.5s;
+  animation: icon-container2 32s linear infinite 4.5s;
 
 }
 
@@ -537,7 +602,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container2 16s linear infinite 4.5s;
+    icon-container2 32s linear infinite 4.5s;
 }
 
 .icon-container2:hover::after {
@@ -558,7 +623,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(100%, -200%);
-  animation: icon-container3 16s linear infinite 4.5s;
+  animation: icon-container3 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container3 {
@@ -580,7 +645,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container3 16s linear infinite 4.5s;
+    icon-container3 32s linear infinite 4.5s;
 }
 
 .icon-container3:hover::after {
@@ -601,7 +666,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(150%, -50%);
-  animation: icon-container4 16s linear infinite 4.5s;
+  animation: icon-container4 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container4 {
@@ -623,7 +688,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container4 16s linear infinite 4.5s;
+    icon-container4 32s linear infinite 4.5s;
 }
 
 .icon-container4:hover::after {
@@ -644,7 +709,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(100%, 100%);
-  animation: icon-container5 16s linear infinite 4.5s;
+  animation: icon-container5 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container5 {
@@ -666,7 +731,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container5 16s linear infinite 4.5s;
+    icon-container5 32s linear infinite 4.5s;
 }
 
 .icon-container5:hover::after {
@@ -687,7 +752,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, 150%);
-  animation: icon-container6 16s linear infinite 4.5s;
+  animation: icon-container6 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container6 {
@@ -729,7 +794,7 @@ body {
   left: 50%;
   transform: translate(-200%, 100%);
   animation:
-    icon-container7 16s linear infinite 4.5s;
+    icon-container7 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container7 {
@@ -751,7 +816,7 @@ body {
   transform: translate(-50%);
   transition: 1s linear;
   animation:
-    icon-container7 16s linear infinite 4.5s;
+    icon-container7 32s linear infinite 4.5s;
 }
 
 .icon-container7:hover::after {
@@ -773,7 +838,7 @@ body {
   left: 50%;
   transform: translate(-250%, -50%);
   animation:
-    icon-container8 16s linear infinite 4.5s;
+    icon-container8 32s linear infinite 4.5s;
 }
 
 @keyframes icon-container8 {

@@ -105,7 +105,7 @@ const App = () => {
 
       <div className='pr app' onWheel={handleScroll} onTouchStart={handleTouchStart}  onTouchEnd={handleTouchEnd}>
 
-        <CircleTrack rotation={rotation} />
+        <CircleTrack rotation={rotation} ele={currentEle} />
 
 
         <Nav

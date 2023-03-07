@@ -18,7 +18,7 @@ style={
 
 const Skills = ({styles}) => {
   return(
-    <div className='icons-container pa'>
+    <div className='icons-container'>
       <div className='icons' >
         {iconProj(1, '-25%, -25%', '#61DAFB')}
         {iconProj(2, '150%, -100%', 'rgb(255 220 49 / 50%)')}

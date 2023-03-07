@@ -6,11 +6,15 @@ const scrollStyle={animation: 'fadeIn 0.5s ease-in forwards 1s'}
 const Title = ({ele}) => {
 
   if (ele === 0) {
-    console.log('on load title')
     return(
       <>
         <div className='title pa '>
+          <div>
+
           <h1 className='holoText title-load' style={{animation: 'fadeIn 2s ease-in forwards 4s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
+          <h4 style={{animation: 'fadeIn 2s ease-in forwards 4s'}} >Software Engineer</h4>
+
+          </div>
 
           <Skills styles={loadStyle}/>
 
@@ -21,7 +25,14 @@ const Title = ({ele}) => {
     return (
       <>
         <div className='title pa '>
+
+          <div>
+
           <h1 className='holoText ' style={{animation: 'fadeIn 2s ease-in forwards 1s, holoText 5s infinite ease-in-out alternate'}}>Luke Anger</h1>
+          <h4 style={{animation: 'fadeIn 2s ease-in forwards 1s'}}>Software Engineer</h4>
+
+          </div>
+
           <Skills  styles={scrollStyle}/>
         </div>
       </>

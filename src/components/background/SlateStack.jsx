@@ -43,7 +43,12 @@ const SlateStack = ({ele}) => {
         <div className='card4 card' style={slideOut(4)}>{circuitBoard2()}{circuit2()}</div> :
         <div className='card4 card'>{circuitBoard2()}</div>
         }
-
+        <div className='cardReader'>
+          <button>Contact</button>
+          <button>Projects</button>
+          <button>Experience</button>
+          <button>About</button>
+        </div>
 
       </div>
     </>
