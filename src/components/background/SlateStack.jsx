@@ -44,10 +44,10 @@ const SlateStack = ({ele}) => {
         <div className='card4 card'>{circuitBoard2()}</div>
         }
         <div className='cardReader'>
-          <button>Contact</button>
-          <button>Projects</button>
-          <button>Experience</button>
-          <button>About</button>
+          {ele === 4 ? <button style={{transform: 'translate(-4px, 4px)', boxShadow: '4px -4px rgb(156 0 229)'}}>Contact</button> : <button>Contact</button>}
+          {ele === 3 ? <button style={{transform: 'translate(-4px, 4px)', boxShadow: '4px -4px rgb(59 84 255)'}}>Projects</button> : <button>Projects</button>}
+          {ele === 2 ? <button style={{transform: 'translate(-4px, 4px)', boxShadow: '4px -4px rgb(0 157 120)'}}>Experience</button> : <button>Experience</button>}
+          {ele === 1 || ele === 0 ? <button style={{transform: 'translate(-4px, 4px)', boxShadow: '4px -4px rgb(0 187 193)'}}>About</button> : <button>About</button>}
         </div>
 
       </div>

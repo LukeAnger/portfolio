@@ -313,6 +313,9 @@ body {
 /**********************   Slate Stack   **********************/
 /*************************************************************/
 /*************************************************************/
+.background {
+  z-index: 10000;
+}
 
 .stack {
   position: absolute;
@@ -331,7 +334,7 @@ body {
 
 .cardReader {
   position: absolute;
-  height: 100%;
+  height: 86%;
   width: 100%;
   background-color: grey;
   border-radius: 5px;
@@ -339,15 +342,39 @@ body {
   flex-direction: column;
   align-items: center;
   transform-style: preserve-3d;
-  transform: translate(-100px) rotateY(30deg) ;
+  transform: translate(-140px, 40px) rotateX(60deg) rotateZ(45deg) skewX(45deg) ;
   justify-content: space-evenly;
 }
 
+.cardReader::before {
+  content: '';
+  height: 99%;
+  width: 14%;
+  background-color: #606060;
+  border: 1px solid black;
+  position: absolute;
+  right: -14%;
+  transform: translate(-1px, -10px) rotateY(141deg);
+}
+
+.cardReader::after {
+  content: '';
+  height: 8%;
+  width: 98%;
+  background-color: #9f9f9f;
+  border: 1px solid black;
+  position: absolute;
+  transform: translate(7px, -105px) skewX(131deg);
+}
+
 .cardReader button {
-  border: 1px 0px black;
-  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddfff8a9;
   font-size: 1.6rem;
   font-family: var(--fontButton);
+  transition: 0.5s linear;
+  cursor: pointer;
 }
 
 .card {
