@@ -14,6 +14,7 @@ const App = () => {
   const [scrollDelay, setScrollDelay] = useState(false)
   const [currentEle, setCurrentEle] = useState(0)
 
+
   const title = `title fc jc-cen ai-cen`
   const handleScrollDelay = () => {
     setScrollDelay(true); // stop scroll wheel from triggering function for 2 seconds
@@ -93,14 +94,11 @@ const App = () => {
 
   }
 
-
-
-  // useEffect(() => setCurrentEle(1), [])
-
   return (
     <>
-    <div className='background' style={{position: 'absolute', right: '0px', width: '150px', height: '225px'}}>
-      <SlateStack ele={currentEle}/>
+    <div className='background'
+    style={{position: 'absolute', right: '0px', width: '150px', height: '225px'}}>
+      <SlateStack ele={currentEle} navButtonHandler={navButtonHandler}/>
 
 
     </div>

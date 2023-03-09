@@ -14,8 +14,8 @@ const Experience = ({styles = {}}) => {
         <div className='holoText experience-head' style={{animation: 'fadeIn 2s ease-in forwards 1s, holoText 5s infinite ease-in-out alternate'}}>Experience</div>
 
         <div className='experienceScene'>
-          <button onClick={handleLeftRotate}>Left</button>
-          <button onClick={handleRightRotate}>Right</button>
+          <button className='pa' style={{zIndex: '1', top: '50%', left: '-5%'}} onClick={handleLeftRotate}>Left</button>
+          <button className='pa' style={{zIndex: '1', top: '50%', right: '-5%'}} onClick={handleRightRotate}>Right</button>
           <div className='experienceCarousel' style={{transform: `rotateY(${rotate}deg)`}}>
             <div className='exp'>SEIR</div>
             <div className='exp'>Research</div>
