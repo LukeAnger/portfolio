@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-  --fontButton: 'Share Tech Mono', monospace;
+  --fontTechMono: 'Share Tech Mono', monospace;
 }
 
 * {
@@ -276,11 +276,15 @@ body {
 
 .exp {
   position: absolute;
+  font-family: var(--fontTechMono);
   width: 90%;
   height: 90%;
   left: 5%;
   top: 5%;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
   background-color: rgba(0, 217, 255, 0.534);
+  text-align: center;
 }
 
 .exp:nth-child(1) {
@@ -313,7 +317,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  transform: translate(0px, 8%);
   gap: 5%;
 }
 
@@ -375,7 +379,7 @@ body {
   position: absolute;
   width: 150px;
   height: 225px;
-  transform: translate(-2vw, 2vh) scale(.7);
+  transform: translate(-2vw, 2vh) scale(.9);
   transition: 0.5s linear;
 }
 
@@ -426,10 +430,11 @@ body {
   border-radius: 4px;
   background-color: #ddfff8a9;
   font-size: 1.6rem;
-  font-family: var(--fontButton);
+  font-family: var(--fontTechMono);
   transition: 0.5s linear;
   cursor: pointer;
 }
+
 
 .card {
   width: 100%;
@@ -1000,9 +1005,9 @@ body {
 
 
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1000px) {
   .stack {
-  transform: translate(-2vw, 0vh) scale(.8);
+  transform: translate(-2vw, 0vh) scale(.7);
   }
   .holoText {
   font-size: 3rem;
@@ -1019,9 +1024,15 @@ body {
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
   .stack {
-  transform: translate(2vw, -2vh) scale(0.7);
+  transform: translate(2vw, -2vh) scale(0.6);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .stack {
+  transform: translate(2vw, -2vh) scale(0.5);
   }
   .holoText {
     font-size: 3rem;
@@ -1042,7 +1053,7 @@ body {
 
 @media screen and (max-width: 480px) {
   .stack {
-  transform: translate(6vw, 4vh) scale(0.6);
+  transform: translate(6vw, 4vh) scale(0.4);
   }
   .holoText {
     font-size: 2rem;
@@ -1067,7 +1078,12 @@ body {
     right: 10%
   }
   .icons {
-    transform: translate(110vw, 45svh) scale(0.6);
+    transform: scale(0.6);
+  }
+  @keyframes rotate360 {
+    to {
+      transform: scale(0.6) rotate(360deg);
+    }
   }
 }
 

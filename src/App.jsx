@@ -10,7 +10,7 @@ import Title from './components/about/Title.jsx'
 const App = () => {
 
   const [startTouchY, setStartTouchY] = useState(null);
-  const [rotation , setRotation] = useState(0);
+  const [rotation , setRotation] = useState(90);
   const [scrollDelay, setScrollDelay] = useState(false)
   const [currentEle, setCurrentEle] = useState(0)
 

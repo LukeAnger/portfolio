@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import SEIR from './SEIR.jsx'
+import Loadmaster from './Loadmaster.jsx'
+import Chef from './Chef.jsx'
+import Research from './Research.jsx'
+import Tutor from './Tutor.jsx'
 
 const Experience = ({styles = {}}) => {
   const [rotate, setRotate] = useState(0)
@@ -17,11 +22,11 @@ const Experience = ({styles = {}}) => {
           <button className='pa' style={{zIndex: '1', top: '50%', left: '-5%'}} onClick={handleLeftRotate}>Left</button>
           <button className='pa' style={{zIndex: '1', top: '50%', right: '-5%'}} onClick={handleRightRotate}>Right</button>
           <div className='experienceCarousel' style={{transform: `rotateY(${rotate}deg)`}}>
-            <div className='exp'>SEIR</div>
-            <div className='exp'>Research</div>
-            <div className='exp'>School</div>
-            <div className='exp'>Chef</div>
-            <div className='exp'>Veteran</div>
+            <SEIR />
+            <Loadmaster />
+            <Chef />
+            <Tutor />
+            <Research />
           </div>
         </div>
       </div>
