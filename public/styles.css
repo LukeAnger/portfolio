@@ -342,6 +342,7 @@ body {
 	--c: #1dd3b01a;
 	font-weight: 700;
 	font-size: 4rem;
+  font-family: var(--fontTechMono);
 	color: #ffffffa0;
 	letter-spacing: 0.5rem;
 	text-shadow: 0.2rem -0.4rem var(--c), 0.4rem -0.8rem var(--c), 0.6rem -1.2rem var(--c), 1.5rem -3rem 5px var(--c), 3rem -4.5rem 10px var(--c);

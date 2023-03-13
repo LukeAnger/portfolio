@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
+:root {
+  --fontTechMono: 'Share Tech Mono', monospace;
+}
 
 * {
 	margin: 0;
@@ -19,14 +23,14 @@ body {
   animation: bodyColor 4s ease-out;
 }
 
-@keyframes bodyColor {
+/* @keyframes bodyColor {
   from {
     background-color: #3c8b99;
   } to {
     background-color: rgba(10, 12, 18, 1);
 
   }
-}
+} */
 
 #root {
   width: 100%;
@@ -70,15 +74,22 @@ body {
 
 
 
+/*************************************************************/
+/*************************************************************/
+/**********************   Nav  Button   **********************/
+/*************************************************************/
+/*************************************************************/
+
+
 .circleNav {
   position: absolute;
-  width: 30%;
-  height: 30vw;
+  width: 12vh;
+  height: 12vh;
   /* background: radial-gradient(ellipse at top, #e66465, transparent),
   radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
   border-radius: 50%;
   transform-origin: center;
-  transform: translate(-50%, calc(50vh - 50%));
+  transform: translate(calc(50vw - 50%), -50%) rotate(90deg);
   animation: navSlide 2s ease-out forwards;
   z-index: 1000;
 }
@@ -106,25 +117,24 @@ body {
   height: 100%;
   border: none;
   border-radius: 50%;
-  background-color: #00ffff65;
+  background-color: #ffffff65;
   cursor: pointer;
   clip-path: polygon(50% 50%, 100% 33.75%, 100% 66.25%);
   transition: 0.5s;
 }
 
-@keyframes navSlide {
+/* @keyframes navSlide {
   from {
     transform: translate(calc(50vw - 50%), calc(50vh - 50%));
   } to {
-    transform: translate(-50%, calc(50vh - 50%));
+    transform: translate(calc(50vw - 50%), -50%) rotate(90deg);
   }
-}
+} */
 
 
 .navButton1 {
   transform: rotate(65deg) translate(3%);
   animation: navButton1 4s linear backwards;
-
 }
 
 .navButton2 {
@@ -187,40 +197,15 @@ body {
 
 .circleContent {
   position: absolute;
-  width: 175%;
-  height: 175vw;
-  /* border: 1px solid #00ffea8c; */
-  /* background: radial-gradient(ellipse at top, #e66465, transparent),
-  radial-gradient(ellipse at bottom, #4d9f0c, transparent); */
-  box-shadow: 0px 0px 40px 10px #00f7ffc4;
+  width: 20svh;
+  height: 20svh;
+  background:
+    radial-gradient(ellipse at top, #e66465, transparent),          radial-gradient(ellipse at bottom, #4d9f0c, transparent);
   border-radius: 50%;
   transform-origin: center;
   transition: 2s linear;
   z-index: -1000;
-  opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
 }
-
-/* .circleContent svg:nth-child(1) {
-  transform: scale(0.2) translate(400vw, 0px);
-  background: white;
-}
-
-.circleContent svg:nth-child(2) {
-  transform: scale(0.2) translate(600vw, 0px);
-  background: red;
-}
-
-.circleContent svg:nth-child(3) {
-  transform: scale(0.2) translate(0vw, 600vw);
-  background: yellow;
-}
-
-.circleContent svg:nth-child(4) {
-  transform: scale(0.2) translate(0vw, 400vw);
-  background: green;
-} */
-
 
 .content-wrapper {
   position: relative;
@@ -240,27 +225,115 @@ body {
 }
 
 .title {
-  /* transition: 2s ease-out; */
-  animation: fadeIn 2s ease-out backwards 8s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
 }
+
+.title h4 {
+  font-family: 'Share Tech Mono', monospace;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  border: 2px solid white;
+  border-radius: 1rem;
+  text-indent: 1rem;
+}
+
+
+/*************************************************************/
+/*************************************************************/
+/**********************   Experience   ***********************/
+/*************************************************************/
+/*************************************************************/
 
 .experience {
-
-  /* transition: 2s ease-out; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  translate: 0 6%;
+  gap: 5%;
 }
 
+.experienceScene {
+  height: 500px;
+  width: 350px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.experienceCarousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.5s ease-in;
+}
+
+.exp {
+  position: absolute;
+  font-family: var(--fontTechMono);
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  border-radius: 10px;
+  border-top-left-radius: 50px;
+  background-color: rgba(0, 217, 255, 0.534);
+  text-align: center;
+}
+
+.exp:nth-child(1) {
+  transform: rotateY(calc(72deg * 0)) translateZ(241px);
+}
+
+.exp:nth-child(2) {
+  transform: rotateY(calc(72deg * 1)) translateZ(241px);
+}
+
+.exp:nth-child(3) {
+  transform: rotateY(calc(72deg * 2)) translateZ(241px);
+}
+
+.exp:nth-child(4) {
+  transform: rotateY(calc(72deg * 3)) translateZ(241px);
+}
+
+.exp:nth-child(5) {
+  transform: rotateY(calc(72deg * 4)) translateZ(241px);
+}
+/*************************************************************/
+/*************************************************************/
+/**********************    Projects    ***********************/
+/*************************************************************/
+/*************************************************************/
+
 .projects {
-
-  /* transition: 2s ease-out; */
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(0px, 8%);
+  gap: 5%;
 }
 
 .contact {
-  /* transition: 2s ease-out; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
 }
 
 
-
+.section-header {
+  transition: 2s ease-in 2s;
+}
 
 
 
@@ -274,20 +347,13 @@ body {
 	text-shadow: 0.2rem -0.4rem var(--c), 0.4rem -0.8rem var(--c), 0.6rem -1.2rem var(--c), 1.5rem -3rem 5px var(--c), 3rem -4.5rem 10px var(--c);
 	padding: 0.25rem 0.5rem 0.5rem;
 	transform: skew(-5deg);
+  opacity: 0;
 	animation:
     holoText 5s infinite ease-in-out alternate;
 }
 
-.holoTextTitle {
-	animation:
-    holoText 5s infinite ease-in-out alternate,
-    fadeIn 1s ease-out backwards 4s;
-}
-
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  } to {
+  to {
     opacity: 1;
   }
 }
@@ -300,16 +366,74 @@ body {
 }
 
 
-/* SLATE STACK */
+/*************************************************************/
+/*************************************************************/
+/**********************   Slate Stack   **********************/
+/*************************************************************/
+/*************************************************************/
+.background {
+  z-index: 10000;
+}
 
 .stack {
   position: absolute;
   width: 150px;
   height: 225px;
-  transform: translate(-2vw, 2vh) scale(.7);
+  transform: translate(-2vw, 2vh) scale(.9);
   transition: 0.5s linear;
 }
 
+.cardReaderScene {
+  height: 100%;
+  width: 100%;
+  perspective: 100px;
+
+}
+
+.cardReader {
+  position: absolute;
+  height: 86%;
+  width: 100%;
+  background-color: grey;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform: translate(-140px, 40px) rotateX(60deg) rotateZ(45deg) skewX(45deg) ;
+  justify-content: space-evenly;
+}
+
+.cardReader::before {
+  content: '';
+  height: 99%;
+  width: 14%;
+  background-color: #606060;
+  border: 1px solid black;
+  position: absolute;
+  right: -14%;
+  transform: translate(-1px, -10px) rotateY(141deg);
+}
+
+.cardReader::after {
+  content: '';
+  height: 8%;
+  width: 98%;
+  background-color: #9f9f9f;
+  border: 1px solid rgb(0, 0, 0);
+  position: absolute;
+  transform: translate(7px, -105px) skewX(131deg);
+}
+
+.cardReader button {
+  border: none;
+  border-radius: 4px;
+  background-color: #ddfff8a9;
+  font-size: 1.6rem;
+  font-family: var(--fontTechMono);
+  transition: 0.5s linear;
+  cursor: pointer;
+}
 
 
 .card {
@@ -323,7 +447,7 @@ body {
 }
 
 .card1 {
-  background-color: rgba(0, 255, 200, 0.363);
+  background-color: #1af9ff80;
   animation:
     card1 1s ease-in,
     card1Initial 1s linear backwards;
@@ -352,7 +476,7 @@ body {
 }
 
 .card2 {
-  background-color: rgba(0, 217, 255, 0.473);
+  background-color: #00bb9078;
   transform: translate(0px, -30px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -369,7 +493,7 @@ body {
 }
 
 .card3 {
-  background-color: rgba(0, 255, 136, 0.452);
+  background-color: #0f5ff37a;
   transform: translate(0, -60px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -386,7 +510,7 @@ body {
 }
 
 .card4 {
-  background-color: rgba(62, 168, 255, 0.61);
+  background-color: #a644ff9e;
   transform: translate(0, -90px) rotateX(60deg) rotateZ(45deg);
   animation:
   card1 1s ease-in,
@@ -404,9 +528,486 @@ body {
 
 
 
-@media screen and (max-width: 1080px) {
+/*************************************************************/
+/*************************************************************/
+/**********************   Skill Icons   **********************/
+/*************************************************************/
+/*************************************************************/
+
+#reactIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch1 8s ease-in-out infinite;
+}
+
+#javascriptIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 8s ease-in-out infinite;
+}
+
+#htmlIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch1 9s ease-in-out infinite;
+}
+
+#cssIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 7s ease-in-out infinite;
+}
+
+#expressIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 6s ease-in-out infinite;
+}
+
+#nodeIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 10s linear infinite;
+}
+
+#mongoIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 11s ease-in-out infinite;
+}
+
+#postgreIcon {
+  filter: drop-shadow(1px 0px 1px rgb(140, 233, 240));
+  animation: glitch2 7.5s ease-in-out infinite;
+}
+
+.icons {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  z-index: 1;
+  opacity: 0;
+  animation:
+    rotate360 32s linear infinite 4.5s,
+    fadeIn 0.5s ease-in forwards 4s;
+}
+
+@keyframes rotate360 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icons-container {
+
+}
+
+
+.iconProjector1 {
+  box-shadow:
+    0px -60px 20px 2px rgb(97 218 251 / 25%),
+    0px -40px 12px 1px rgb(97 218 251 / 30%),
+    0px -25px 10px 0px rgb(97 218 251 / 35%);
+  transform: translate(-225%, -225%) rotate(-45deg) rotateX(30deg);
+  /* animation:
+    icon-projector1 32s linear infinite 4.5s; */
+}
+
+@keyframes icon-projector1 {
+  from {
+    transform: translate(-225%, -225%) rotate(-45deg) rotateX(30deg);
+  } to {
+    transform: translate(-225%, -225%) rotate(-405deg) rotateX(30deg);
+  }
+}
+
+.icon-container1 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, -200%);
+  animation:
+    icon-container1 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container1 {
+  from {
+    transform: translate(-200%, -200%);
+  } to {
+    transform: translate(-200%, -200%) rotate(-360deg);
+  }
+}
+
+.icon-container1::after {
+  content: 'React';
+  color: #61DAFB;
+  text-shadow: 0px 0px 6px #61DAFB;
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container1 32s linear infinite 4.5s;
+}
+
+.icon-container1:hover::after {
+  display: block;
+}
+
+
+.iconProjector2 {
+  box-shadow:
+  0px -60px 20px 2px rgb(255 220 49 / 25%),
+  0px -40px 12px 1px rgb(255 220 49 / 30%),
+  0px -25px 10px 0px rgb(255 220 49 / 35%);
+  transform: translate(-50%, -300%) rotateX(30deg);
+}
+
+.icon-container2 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -250%);
+  animation: icon-container2 32s linear infinite 4.5s;
+
+}
+
+@keyframes icon-container2 {
+  from {
+    transform: translate(-50%, -250%);
+  } to {
+    transform: translate(-50%, -250%) rotate(-360deg);
+  }
+}
+
+.icon-container2::after {
+  content: 'Javascript';
+  color: rgb(255 220 49 / 50%);
+  text-shadow: 0px 0px 6px rgb(255 220 49 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container2 32s linear infinite 4.5s;
+}
+
+.icon-container2:hover::after {
+  display: block;
+}
+
+.iconProjector3 {
+  box-shadow:
+    0px -60px 20px 2px rgb(255 84 36 / 25%),
+    0px -40px 12px 1px rgb(255 84 36 / 30%),
+    0px -25px 10px 0px rgb(255 84 36 / 35%);
+  transform: translate(125%, -225%) rotate(45deg) rotateX(30deg);
+}
+
+.icon-container3 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(100%, -200%);
+  animation: icon-container3 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container3 {
+  from {
+    transform: translate(100%, -200%);
+  } to {
+    transform: translate(100%, -200%) rotate(-360deg);
+  }
+}
+
+.icon-container3::after {
+  content: 'HTML5';
+  color: rgb(255 84 36 / 50%);
+  text-shadow: 0 0 6px rgb(255 84 36 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container3 32s linear infinite 4.5s;
+}
+
+.icon-container3:hover::after {
+  display: block;
+}
+
+.iconProjector4 {
+  box-shadow:
+    0px -60px 24px 1px rgb(0 147 255 / 25),
+    0px -40px 12px 1px rgb(0 147 255 / 30%),
+    0px -25px 10px 0px rgb(0 147 255 / 35%);
+  transform: translate(200%, -50%) rotate(90deg) rotateX(30deg);
+}
+
+.icon-container4 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, -50%);
+  animation: icon-container4 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container4 {
+  from {
+    transform: translate(150%, -50%);
+  } to {
+    transform: translate(150%, -50%) rotate(-360deg);
+  }
+}
+
+.icon-container4::after {
+  content: 'CSS3';
+  color: rgb(0 147 255 / 50%);
+  text-shadow: 0 0 6px rgb(0 147 255 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container4 32s linear infinite 4.5s;
+}
+
+.icon-container4:hover::after {
+  display: block;
+}
+
+.iconProjector5 {
+  box-shadow:
+    0px -60px 20px 2px rgb(151 151 151 / 25%),
+    0px -40px 12px 1px rgb(151 151 151 / 30%),
+    0px -25px 10px 0px rgb(151 151 151 / 35%);
+  transform: translate(125%, 125%) rotate(135deg) rotateX(30deg);
+}
+
+.icon-container5 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(100%, 100%);
+  animation: icon-container5 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container5 {
+  from {
+    transform: translate(100%, 100%);
+  } to {
+    transform: translate(100%, 100%) rotate(-360deg);
+  }
+}
+
+.icon-container5::after {
+  content: 'Express';
+  color: rgb(151 151 151 / 50%);
+  text-shadow: 0 0 6px rgb(151 151 151 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -15%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container5 32s linear infinite 4.5s;
+}
+
+.icon-container5:hover::after {
+  display: block;
+}
+
+.iconProjector6 {
+  box-shadow:
+    0px -60px 20px 2px rgb(0 255 0 / 25%),
+    0px -40px 12px 1px rgb(0 255 0 / 30%),
+    0px -25px 10px 0px rgb(0 255 0 / 35%);
+  transform: translate(-50%, 200%) rotate(180deg) rotateX(30deg);
+}
+
+.icon-container6 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  animation: icon-container6 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container6 {
+  from {
+    transform: translate(-50%, 150%);
+  } to {
+    transform: translate(-50%, 150%) rotate(-360deg);
+  }
+}
+
+.icon-container6::after {
+  content: 'Node.js';
+  color: rgb(0 255 0 / 50%);
+  text-shadow: 0 0 6px rgb(0 255 0 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -35%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+}
+
+.icon-container6:hover::after {
+  display: block;
+}
+
+.iconProjector7 {
+  box-shadow:
+    0px -60px 20px 2px rgb(93 134 255 / 25%),
+    0px -40px 12px 1px rgb(93 134 255 / 30%),
+    0px -25px 10px 0px rgb(93 134 255 / 35%);
+  transform: translate(-225%, 125%) rotate(225deg) rotateX(30deg);
+}
+
+.icon-container7 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-200%, 100%);
+  animation:
+    icon-container7 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container7 {
+  from {
+    transform: translate(-200%, 100%);
+  } to {
+    transform: translate(-200%, 100%) rotate(-360deg);
+  }
+}
+
+.icon-container7::after {
+  content: 'PostgreSQL';
+  color: rgb(93 134 255 / 50%);
+  text-shadow: 0 0 6px rgb(93 134 255 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+  animation:
+    icon-container7 32s linear infinite 4.5s;
+}
+
+.icon-container7:hover::after {
+  display: block;
+}
+
+.iconProjector8 {
+  box-shadow:
+    0px -60px 20px 2px rgb(0 255 0 / 25%),
+    0px -40px 12px 1px rgb(0 255 0 / 30%),
+    0px -25px 10px 0px rgb(0 255 0 / 35%);
+  transform: translate(-300%, -50%) rotate(270deg) rotateX(30deg);
+}
+
+.icon-container8 {
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-250%, -50%);
+  animation:
+    icon-container8 32s linear infinite 4.5s;
+}
+
+@keyframes icon-container8 {
+  from {
+    transform: translate(-250%, -50%);
+  } to {
+    transform: translate(-250%, -50%) rotate(-360deg);
+  }
+}
+
+.icon-container8::after {
+  content: 'MongoDB';
+  color: rgb(0 255 0 / 50%);
+  text-shadow: 0 0 6px rgb(0 255 0 / 50%);
+  display: none;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+  transition: 1s linear;
+}
+
+
+.icon-container8:hover::after {
+  display: block;
+}
+
+@keyframes glitch1 {
+  11% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 25% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 37% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 49% {
+    filter: drop-shadow(1px 0px 1px white)
+  } 61% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 74% {
+    filter: drop-shadow(1px -1px 1px white)
+  } 86% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 100% {
+    filter: drop-shadow(1px 0px 1px white)
+  }
+}
+
+@keyframes glitch2 {
+  11% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 25% {
+    filter: drop-shadow(1px 1px 1px white)
+  } 37% {
+    filter: drop-shadow(-1px 1px 1px white)
+  } 49% {
+    filter: drop-shadow(1px 0px 1px white)
+  } 61% {
+    filter: drop-shadow(-1px -1px 1px white)
+  } 74% {
+    filter: drop-shadow(0px 1px 1px white)
+  } 86% {
+    filter: drop-shadow(1px -1px 1px white)
+  } 100% {
+    filter: drop-shadow(-1px 1px 1px white)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
   .stack {
-  transform: translate(-2vw, 0vh) scale(.6);
+  transform: translate(-2vw, 0vh) scale(.7);
   }
   .holoText {
   font-size: 3rem;
@@ -418,11 +1019,20 @@ body {
     transform: skew(10deg);
     }
   }
+  .icons {
+    transform: translate() scale(0.8);
+  }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 880px) {
   .stack {
-  transform: translate(2vw, -2vh) scale(0.4);
+  transform: translate(2vw, -2vh) scale(0.6);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .stack {
+  transform: translate(2vw, -2vh) scale(0.5);
   }
   .holoText {
     font-size: 3rem;
@@ -434,14 +1044,16 @@ body {
       transform: skew(10deg);
     }
   }
-
+  .icons {
+    transform: translate() scale(0.7);
+  }
 }
 
 
 
 @media screen and (max-width: 480px) {
   .stack {
-  transform: translate(6vw, 65vh) scale(0.3);
+  transform: translate(6vw, 4vh) scale(0.4);
   }
   .holoText {
     font-size: 2rem;
@@ -465,7 +1077,19 @@ body {
   .head-projector:nth-child(2) {
     right: 10%
   }
-
+  .icons {
+    transform: scale(0.6);
+  }
+  @keyframes rotate360 {
+    to {
+      transform: scale(0.6) rotate(360deg);
+    }
+  }
 }
+
+
+
+
+
 
 
