@@ -274,6 +274,37 @@ body {
   transition: 0.5s ease-in;
 }
 
+.expButtonLeft {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: -5%;
+  rotate: 180deg;
+  transition: 250ms linear;
+  cursor: pointer;
+}
+
+.expButtonRight {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -5%;
+  transition: 250ms linear;
+  cursor: pointer;
+}
+
+.expButtonLeft:hover, .expButtonRight:hover {
+  scale: 1.5;
+}
+.expButtonLeft:active {
+  scale: 1.5;
+  translate: -100%
+}
+
+.expButtonRight:active {
+  scale: 1.5;
+  translate: 100%
+}
 .exp {
   position: absolute;
   font-family: var(--fontTechMono);
@@ -330,6 +361,18 @@ body {
   gap: 5%;
 }
 
+
+iframe div {
+  background-color: red;
+}
+
+.xpWfed {
+  display: none;
+} /* google form footer */
+
+.teQAzf {
+  scale: 2
+}
 
 .section-header {
   transition: 2s ease-in 2s;
@@ -1033,7 +1076,11 @@ body {
 
 @media screen and (max-width: 640px) {
   .stack {
-  transform: translate(2vw, -2vh) scale(0.5);
+    transform: translate(12vw, -5vh) scale(0.7);
+  }
+  .circleNav {
+    width: 25%;
+    height: 25vw;
   }
   .holoText {
     font-size: 3rem;
@@ -1054,7 +1101,7 @@ body {
 
 @media screen and (max-width: 480px) {
   .stack {
-  transform: translate(6vw, 4vh) scale(0.4);
+    transform: translate(22vw, -7vh) scale(0.6);
   }
   .holoText {
     font-size: 2rem;
@@ -1062,8 +1109,8 @@ body {
     transform: translate(0rem, -2rem);
   }
   .circleNav {
-    width: 40%;
-    height: 40vw;
+    width: 30%;
+    height: 30vw;
   }
   @keyframes holoText {
     100% {

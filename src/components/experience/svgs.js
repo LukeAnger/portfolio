@@ -6,3 +6,14 @@ export const card = () => (
 </svg>
 
 )
+
+export const arrow = (handleClick, name) => (
+  <div className={name}>
+    <svg onClick={handleClick} width="26" height="64" viewBox="0 0 26 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.901978" y="3.04541" width="6" height="38" rx="3" transform="rotate(-30 0.901978 3.04541)" fill="#F57EE9"/>
+<rect x="20" y="28" width="6" height="38" rx="3" transform="rotate(30 20 28)" fill="#F57EE9"/>
+</svg>
+  </div>
+
+
+)
