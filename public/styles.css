@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Jost';
+  font-family: var(--fontTechMono);
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -361,17 +361,18 @@ body {
   gap: 5%;
 }
 
-
-iframe div {
-  background-color: red;
+#suggestionsForm {
+  border-radius: 10px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: #06a1c4a6;
+  gap: 1vh;
+  scale: 1.5;
 }
 
-.xpWfed {
-  display: none;
-} /* google form footer */
-
-.teQAzf {
-  scale: 2
+.sugForm3 {
+  height: 10vh;
 }
 
 .section-header {

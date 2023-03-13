@@ -3,11 +3,11 @@ import React, { useState } from 'react'
 const Nav = ({sectionNumber, navButtonHandler}) => {
 
   const navButton = (rotate, move, cb, ele, color='#ffffff65') => (
-    <button
+    <div
       className={`navButton${ele} navButton`}
       style={{ transform: `rotate(${rotate}deg) translate(${move})`, backgroundColor: color }}
       onClick={() => cb(ele)}>
-    </button>
+    </div>
   )
 
   return (
