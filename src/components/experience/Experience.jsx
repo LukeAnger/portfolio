@@ -17,7 +17,7 @@ const Experience = ({styles = {}}) => {
   return (
     <>
       <div className='experience pa ' style={styles}>
-        <div className='holoText experience-head' style={{animation: 'fadeIn 2s ease-in forwards 1s, holoText 5s infinite ease-in-out alternate'}}>Experience</div>
+        <div className='holoText experience-head' style={{animation: 'fadeIn 0.5s ease-in forwards 0.5s, holoText 5s infinite ease-in-out alternate'}}>Experience</div>
 
         <div className='experienceScene'>
           {arrow(handleLeftRotate, 'expButtonLeft')}

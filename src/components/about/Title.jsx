@@ -2,7 +2,7 @@ import React from 'react'
 import Skills from './Skills.jsx'
 
 const loadStyle={animation: 'fadeIn 0.5s ease-in forwards 4s, rotate360 16s linear infinite 4.5s'}
-const scrollStyle={animation: 'fadeIn 0.5s ease-in forwards 1s'}
+const scrollStyle={animation: 'fadeIn 0.5s ease-in forwards 0.5s'}
 const Title = ({ele}) => {
 
   if (ele === 0) {

@@ -282,6 +282,8 @@ body {
   rotate: 180deg;
   transition: 250ms linear;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
 }
 
 .expButtonRight {
@@ -291,6 +293,8 @@ body {
   right: -5%;
   transition: 250ms linear;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
 }
 
 .expButtonLeft:hover, .expButtonRight:hover {
@@ -316,7 +320,10 @@ body {
   border-top-left-radius: 50px;
   background-color: rgba(0, 217, 255, 0.534);
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
 }
+
 
 .exp:nth-child(1) {
   transform: rotateY(calc(72deg * 0)) translateZ(241px);
@@ -352,6 +359,13 @@ body {
   gap: 5%;
 }
 
+
+/*************************************************************/
+/*************************************************************/
+/**********************    Contact    ************************/
+/*************************************************************/
+/*************************************************************/
+
 .contact {
   height: 100%;
   display: flex;
@@ -359,17 +373,79 @@ body {
   align-items: center;
   justify-content: space-around;
   gap: 5%;
+  position: relative;
 }
 
 #suggestionsForm {
+  /* position: relative; */
   border-radius: 10px;
+  width: max(30vw, 300px);
+  height: 60vh;
   padding: 5%;
   display: flex;
   flex-direction: column;
   background-color: #06a1c4a6;
   gap: 1vh;
-  scale: 1.5;
+  font-size: 1.5rem;
+  /* scale: 1.5; */
+  translate: 0 -10vh;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in 0.5s forwards;
 }
+
+#suggestionsForm label:focus {
+  transform: translate(0, 0.5px);
+}
+/* @keyframes fadeInForm {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+/* #suggestionsForm label:focus-within {
+  transform: scale(1.02);
+  transition: 0.1s ease-in;
+  font-weight: bold;
+} */
+
+#suggestionsForm input,
+#suggestionsForm textarea {
+  width: 100%;
+  padding: .25rem;
+  border: none;
+  font-size: 1.5rem;
+  /* outline: none; */
+  font-family: var(--fontTechMono);
+  background-color: #ffffffa6;
+}
+
+#suggestionsForm textarea {
+  height: 30vh;
+}
+
+#suggestionsForm button {
+  font-size: 1.5rem;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0px 0px 10px 3px #3a3a3a;
+  border: none;
+  outline: none;
+  font-family: var(--fontTechMono);
+  background-color: #ffffffa6;
+  cursor: pointer;
+  transition: 0.25s ease-in;
+}
+
+#suggestionsForm button:focus {
+
+  box-shadow: 0px 0px 10px 7px #3a3a3a;
+
+}
+
 
 .sugForm3 {
   height: 10vh;

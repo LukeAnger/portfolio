@@ -36,6 +36,7 @@ const App = () => {
 
   const handleScroll = (e) => {
     if (scrollDelay) return;
+    if (e.nativeEvent.target.name === 'Suggestions') return;
     let direction = e.nativeEvent.deltaY
     if (currentEle === 0) {
       handleLoadScroll(direction)
