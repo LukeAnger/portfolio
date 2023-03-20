@@ -313,11 +313,8 @@ body {
   position: absolute;
   font-family: var(--fontTechMono);
   width: 90%;
-  height: 90%;
-  left: 5%;
   top: 5%;
-  border-radius: 10px;
-  border-top-left-radius: 50px;
+  border-radius: 1rem;
   background-color: rgba(0, 217, 255, 0.534);
   text-align: center;
   opacity: 0;
@@ -357,6 +354,11 @@ body {
   align-items: center;
   transform: translate(0px, 8%);
   gap: 5%;
+}
+
+.outwitImg {
+  object-fit: cover;
+  max-width: 60%;
 }
 
 
