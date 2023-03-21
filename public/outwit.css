@@ -1,0 +1,164 @@
+.score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 1rem
+}
+
+.board {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(9, min(3vw, 20px));
+  grid-template-rows: repeat(10, min(3vw, 20px));
+}
+
+.board > div {
+  width: min(3vw, 20px);
+  height: min(3vw, 20px);
+  border: 1px solid black;
+  display: grid;
+  place-content: center;
+}
+
+/* .board > div:hover {
+  background-color: #cd84e4;
+} */
+
+
+
+.tile1 {
+  background-color: rgb(255, 225, 144);
+}
+
+.tile2 {
+  background-color: #818beb;
+}
+
+.tile3 {
+  background-color: #ff4141;
+}
+
+.highlight {
+  background-color: #58db74;
+}
+
+.piece {
+  width: min(2.25vw, 15px);
+  height: min(2.25vw, 15px);
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.piece:hover {
+  border-color: #58db74;
+  box-shadow: 0 0 0px 3px #58db74;
+}
+
+.piece1, .piece2, .piece5, .piece6 {
+  background-color: #818beb;
+}
+
+.piece2::after, .piece6::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #ff4141;
+  transform: translate(50%, 50%);
+}
+
+.piece3, .piece4, .piece7, .piece8 {
+  background-color: #ff4141;
+}
+
+.piece4::after, .piece8::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #818beb;
+  transform: translate(50%, 50%);
+}
+
+
+@media screen and (max-width: 1200px) {
+  .board {
+    grid-template-columns: repeat(9, max(5vw, 52px));
+    grid-template-rows: repeat(10, max(5vw, 52px));
+  }
+
+  .board > div {
+    width: max(5vw, 52px);
+    height: max(5vw, 52px);
+  }
+
+  .piece {
+    width: max(2.25vw, 39px);
+    height: max(2.25vw, 39px);
+  }
+
+  #infoContainer {
+    width: calc(9 * max(5vw, 52px));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .board {
+    grid-template-columns: repeat(9, max(6.8vw, 52px));
+    grid-template-rows: repeat(10, max(6.8vw, 52px));
+  }
+
+  .board > div {
+    width: max(6.8vw, 52px);
+    height: max(6.8vw, 52px);
+  }
+
+  .piece {
+    width: max(5.1vw, 39px);
+    height: max(5.1vw, 39px);
+  }
+
+  #infoContainer {
+    width: calc(9 * max(6.8vw, 52px));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(9, 10vw);
+    grid-template-rows: repeat(10, 10vw);
+  }
+
+  .board > div {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  .piece {
+    width: 7.5vw;
+    height: 7.5vw;
+  }
+
+  #infoContainer {
+    width: calc(9 * 10vw);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #infoContainer {
+    width: calc(9 * 10vw);
+    top: 20%
+  }
+}

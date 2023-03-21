@@ -1,4 +1,5 @@
 import React from 'react'
+import Board from './outwit/Board.jsx'
 
 const Outwit = () => {
 
@@ -9,8 +10,8 @@ const Outwit = () => {
           <h3>Outwit</h3>
 
           <p>Outwit is a strategy board game I loved to play with my grandma when I was a kid. I couldn't find the game in my grandparents house so I decided to create and share it with everyone.</p>
-
-          <img src='assets\outwit.PNG' alt='outwit' className='outwitImg' />
+          <Board />
+          {/* <img src='assets\outwit.PNG' alt='outwit' className='outwitImg' /> */}
 
           <a href='https://www.lukeanger.com/outwit' target='_blank' rel='noopener noreferrer'>Check it out here!</a>
 
