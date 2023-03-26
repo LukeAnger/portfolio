@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
+.syzygyLite {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.eqs-vars {
+  position: relative;
+  width: clamp(300px, 900px, 80vw);
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.variables {
+  position: absolute;
+  background-color: #f3a8ef;
+  padding: 10px;
+  width: max-content;
+  transform: translateY(-100%);
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 0px rgb(153, 61, 165);
+}
+
+.syzygyFormVarsInfo {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.syzygyFormVarsInfo:hover {
+  background-color: #f3a8ef;
+  border-color: #af3213;
+  transform: scale(1.1);
+}
+
+.solved {
+  background-color: rgb(177, 211, 241);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 0px rgb(43, 124, 148);
+  width: max-content;
+  align-items: center;
+}
+
+.steps {
+  margin-top: 10px;
+}
+
+.solved div {
+  margin-left: 2px;
+  font-size: 0.9rem;
+}
+
+.exampleToggle {
+  margin-top: 3%;
+}
+
+.hint {
+  position: relative;
+  cursor: pointer;
+}
+.hint div{
+  position: absolute;
+  transform: translateX(10px);
+  z-index: 100;
+  color: black;
+  opacity: 0;
+  background-color: #f18787;
+  transition: 0.5s;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px 0px rgb(134, 45, 45);
+  cursor:text;
+  pointer-events: none;
+}
+
+.hint1 {
+  position: absolute;
+  transform: translateX(-50px);
+  z-index: 100;
+  color: black;
+  opacity: 0;
+  background-color: #f18787;
+  transition: 0.5s;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px 0px rgb(134, 45, 45);
+}
+
+.hint:hover div{
+  opacity: 1;
+}
+
+.variable-form {
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: rgb(250, 168, 91);
+  box-shadow: 6px 6px 0 0px rgb(167, 96, 39);
+  border-radius: 10px;
+}
+
+
+.variable {
+  width: 8rem;
+  position: relative;
+  margin-left: 15px;
+}
+
+.variable-form input {
+  width: 3rem;
+  margin-left: 2px;
+  background-color: rgb(245, 214, 111);
+  border-radius: 5px;
+  position: absolute;
+  transform: translate(62.5%);
+}
+
+.button-vars {
+  padding: 4px;
+  margin: 4px;
+  width: 33%;
+  height: 25px;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: 0.05s linear;
+  box-shadow: 3px 3px 0 0px rgb(56, 102, 87);
+}
+
+.button-vars:active {
+  box-shadow: 1px 1px 0 0px rgb(56, 102, 87);
+  transform: translate(1px, 1px);
+
+}
+
+.reset-vars {
+  background-color: #8ce48c;
+
+}
+
+.submit-vars {
+  background-color: #ff7af8;
+
+}
+
+.equals {
+  position: absolute;
+  transform: translate(160%);
+}
+
+
+#solar {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  z-index: -10;
+}
+
+.sun {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(231, 226, 118), rgb(255, 225, 53), rgb(235, 183, 39), rgb(255, 151, 53), rgb(235, 117, 39), rgb(214, 214, 214));
+  box-shadow: 0px 0px 10px 5px rgb(158, 81, 81);
+}
+
+.mercury {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #a04f19;
+  transform-origin: -24px 0px;
+  transform: translateX(28px) rotate(-135deg);
+  animation: mercury ease-out 2s forwards;
+}
+
+@keyframes mercury {
+  from {
+    transform: translateX(28px) rotate(-135deg);
+  } to {
+    transform: translateX(28px) rotate(90deg);
+  }
+}
+
+.venus {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 4px 2px, rgb(154, 206, 34), rgb(121, 68, 37));
+  transform-origin: -30px 0px;
+  transform: translateX(36px) rotate(-87deg);
+  animation: venus ease-out 2s forwards;
+}
+
+@keyframes venus {
+  from {
+    transform: translateX(36px) rotate(-87deg);
+  } to {
+    transform: translateX(36px) rotate(90deg);
+  }
+}
+
+.earth {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 4px 2px, rgb(40, 206, 34), rgb(21, 107, 236));
+  transform-origin: -38px 0px;
+  transform: translateX(44px) rotate(-25deg);
+  animation: earth ease-out 2s forwards;
+}
+
+@keyframes earth {
+  from {
+    transform: translateX(44px) rotate(-25deg);
+  } to {
+    transform: translateX(44px) rotate(90deg);
+  }
+}
+
+.mars {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 25% 0, rgb(190, 62, 11), rgb(204, 20, 20), rgb(105, 7, 3));
+  transform-origin: -47px 0px;
+  transform: translateX(52px) rotate(10deg);
+  animation: mars ease-out 2s forwards;
+}
+
+@keyframes mars {
+  from {
+    transform: translateX(52px) rotate(10deg);
+  } to {
+    transform: translateX(52px) rotate(90deg);
+  }
+}
+
+.jupiter {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 25% 0, rgb(145, 123, 2), rgb(156, 154, 2), rgb(143, 117, 3));
+  transform-origin: -80px 0px;
+  transform: translateX(108px) rotate(45deg);
+  animation: jupiter ease-out 2s forwards;
+}
+
+@keyframes jupiter {
+  from {
+    transform: translateX(108px) rotate(45deg);
+  } to {
+    transform: translateX(108px) rotate(90deg);
+  }
+}
+
+.jupiter .red-eye {
+  position: absolute;
+  width: 9px;
+  height: 7px;
+  background-color: #af3213;
+  border-radius: 4px;
+  transform: translate(15px, 12px);
+  box-shadow: 0px 0px 3px 0px #a12708;
+}
+
+.saturn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 4px 2px, rgb(201, 89, 38), rgb(163, 62, 16));
+  transform-origin: -120px 0px;
+  transform: translateX(140px) rotate(58deg);
+  animation: saturn ease-out 2s forwards;
+}
+
+@keyframes saturn {
+  from {
+    transform: translateX(140px) rotate(58deg);
+  } to {
+    transform: translateX(140px) rotate(90deg);
+  }
+}
+
+.saturn .ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 6px solid rgba(216, 179, 110, 0.671);
+  border-top: hidden;
+  transform: rotate3d(1, 0, 0, 65deg);
+}
+.uranus {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 4px 2px, rgb(34, 206, 206), rgb(21, 157, 236));
+  transform-origin: -150px 0px;
+  transform: translateX(165px) rotate(72deg);
+  animation: uranus ease-out 2s forwards;
+}
+
+@keyframes uranus {
+  from {
+    transform: translateX(165px) rotate(72deg);
+  } to {
+    transform: translateX(165px) rotate(90deg);
+  }
+}
+
+.neptune {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-corner at 4px 2px, rgb(34, 80, 206), rgb(47, 125, 241));
+  transform-origin: -175px 0px;
+  transform: translateX(190px) rotate(79deg);
+  animation: neptune ease-out 2s forwards;
+}
+
+
+@keyframes neptune {
+  from {
+    transform: translateX(190px) rotate(79deg);
+  } to {
+    transform: translateX(190px) rotate(90deg);
+  }
+}
+
+
+
+
+
+
+
+
+#syzygy {
+  font-family: 'Rubik Moonrocks';
+  color: rgb(226, 212, 187);
+  font-size: 1.8rem;
+  transform: translate(50px, -40px);
+}
+
+#syzygy div:nth-child(1) {
+  opacity: 0;
+  animation: s linear 4s forwards;
+}
+
+@keyframes s {
+  50% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#syzygy div:nth-child(2) {
+  opacity: 0;
+  animation: y1 linear 4s forwards;
+}
+
+@keyframes y1 {
+  58% {
+    opacity: 0;
+    transform: translateY(-5px);
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#syzygy div:nth-child(3) {
+  opacity: 0;
+  animation: z linear 4s forwards;
+}
+
+@keyframes z {
+  66% {
+    opacity: 0;
+    transform: translateY(-10px);
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#syzygy div:nth-child(4) {
+  opacity: 0;
+  animation: y2 linear 4s forwards;
+}
+
+@keyframes y2 {
+  75% {
+    opacity: 0;
+    transform: translateY(-15px);
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#syzygy div:nth-child(5) {
+  opacity: 0;
+  animation: g linear 4s forwards;
+}
+
+@keyframes g {
+  83% {
+    opacity: 0;
+    transform: translateY(-20px);
+  } 100% {
+    opacity: 1;
+  }
+}
+
+#syzygy div:nth-child(6) {
+  opacity: 0;
+  animation: y3 linear 4s forwards;
+}
+
+@keyframes y3 {
+  91% {
+    opacity: 0;
+    transform: translateY(-25px);
+  } 100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
