@@ -7,26 +7,30 @@ import { arrow } from './svgs.js'
 
 const Projects = ({styles = {}}) => {
   const [rotate, setRotate] = useState(0)
+  const [currentProject, setCurrentProject] = useState(1)
+
+
   const handleLeftRotate = () => {
-    setRotate(rotate - 72)
+    setRotate(rotate - 90)
+    currentProject === 4 ? setCurrentProject(1) : setCurrentProject(currentProject + 1)
   }
   const handleRightRotate = () => {
-    setRotate(rotate + 72)
+    setRotate(rotate + 90)
+    currentProject === 1 ? setCurrentProject(4) : setCurrentProject(currentProject - 1)
   }
   return (
     <>
       <div className='projects pa ' style={styles}>
         <h1 className='section-header holoText' style={{animation: 'fadeIn 0.5s ease-in forwards 0.5s, holoText 5s infinite ease-in-out alternate'}}>Projects</h1>
 
-        <div className='experienceScene'>
-          {arrow(handleLeftRotate, 'expButtonLeft')}
-          {arrow(handleRightRotate, 'expButtonRight')}
-          <div className='experienceCarousel' style={{transform: `rotateY(${rotate}deg)`}} draggable>
-            <Trippy />
-            <Syzygy />
-            <Daff />
-            <Outwit />
-            <Daff />
+        <div className='projectsScene'>
+          {arrow(handleLeftRotate, 'projectButtonLeft')}
+          {arrow(handleRightRotate, 'projectButtonRight')}
+          <div className='projectsCarousel' style={{transform: `rotateY(${rotate}deg)`}} draggable>
+            <Trippy cur={currentProject} />
+            <Syzygy cur={currentProject} />
+            <Daff cur={currentProject} />
+            <Outwit cur={currentProject} />
           </div>
         </div>
 

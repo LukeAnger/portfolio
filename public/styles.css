@@ -111,6 +111,7 @@ body {
     background: #0b5464;
   }
 }
+
 .navButton {
   position: absolute;
   width: 100%;
@@ -205,6 +206,30 @@ body {
   transform-origin: center;
   transition: 2s linear;
   z-index: -1000;
+}
+
+.circleContentContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.projectorsContainer {
+  position: absolute;
+  background-color: white;
+}
+
+.projectorsContainer:nth-of-type(1) {
+  transform: rotate(0deg) translate(0, -50%);
+}
+
+
+.projector {
+  width: 20px;
+  height: 20px;
+  background-color: #0b5464;
+  border-radius: 50%;
 }
 
 .content-wrapper {
@@ -322,25 +347,7 @@ body {
 }
 
 
-.exp:nth-child(1) {
-  transform: rotateY(calc(72deg * 0)) translateZ(241px);
-}
 
-.exp:nth-child(2) {
-  transform: rotateY(calc(72deg * 1)) translateZ(241px);
-}
-
-.exp:nth-child(3) {
-  transform: rotateY(calc(72deg * 2)) translateZ(241px);
-}
-
-.exp:nth-child(4) {
-  transform: rotateY(calc(72deg * 3)) translateZ(241px);
-}
-
-.exp:nth-child(5) {
-  transform: rotateY(calc(72deg * 4)) translateZ(241px);
-}
 /*************************************************************/
 /*************************************************************/
 /**********************    Projects    ***********************/
@@ -355,6 +362,99 @@ body {
   transform: translate(0px, 8%);
   gap: 5%;
 }
+
+
+.projectsScene {
+  height: 500px;
+  width: 350px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projectsCarousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.5s ease-in;
+}
+
+.projectButtonLeft {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: -5%;
+  rotate: 180deg;
+  transition: 250ms linear;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
+}
+
+.projectButtonRight {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: -5%;
+  transition: 250ms linear;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
+}
+
+.projectButtonLeft:hover, .projectButtonRight:hover {
+  scale: 1.5;
+}
+.projectButtonLeft:active {
+  scale: 1.5;
+  translate: -100%
+}
+
+.projectButtonRight:active {
+  scale: 1.5;
+  translate: 100%
+}
+.project {
+  position: absolute;
+
+  font-family: var(--fontTechMono);
+  width: 90%;
+  top: 5%;
+  border-radius: 1rem;
+  background-color: rgba(0, 217, 255, 0.534);
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
+  transition: 0.5s ease-in;
+}
+
+/* .project:nth-child(1) {
+  transform: rotateY(calc(90deg * 0)) translateZ(241px) ;
+  background-color: blue;
+}
+
+.project:nth-child(2) {
+  transform: rotateY(calc(90deg * 1)) translateZ(241px);
+  background-color: red;
+}
+
+.project:nth-child(3) {
+  transform: rotateY(calc(90deg * 2)) translateZ(241px);
+  background-color: green;
+} */
+
+/* .project:nth-child(4) {
+  transform: rotateY(calc(90deg * 3)) translateZ(241px);
+  background-color: yellow;
+} */
+
+
 
 .outwitImg {
   object-fit: cover;

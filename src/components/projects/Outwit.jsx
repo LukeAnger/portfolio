@@ -1,11 +1,13 @@
 import React from 'react'
 import Board from './outwit/Board.jsx'
 
-const Outwit = () => {
+const Outwit = ({cur}) => {
 
+  const style = cur === 4 ? {transform: `rotateY(270deg) translateZ(241px) scaleY(1)`} : {transform: `rotateY(270deg) translateZ(241px) scaleY(0)`}
+    console.log(cur, style)
     return (
-      <div className='exp'>
-        <div className='expContainer'>
+      <div className='project' style={style}>
+        <div className='projectsContainer'>
 
           <h3>Outwit</h3>
 

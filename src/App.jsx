@@ -118,12 +118,12 @@ const App = () => {
         <div className='content-wrapper'>
           <div className='content-wrapper-inner'>
 
-            {currentEle === 0 ?
+            {/* {currentEle === 0 ?
               <Title ele={0}/> :
               null }
             {currentEle === 1 ?
               <Title /> :
-              null }
+              null } */}
 
             {currentEle === 2 ?
               <Experience /> :

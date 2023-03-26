@@ -14,15 +14,40 @@ const CircleTrack = ({rotation, ele}) => {
   }
 
   const styles={
-      transform: `translate(calc(50vw - 50%), -50%) rotate(${rotation + 90}deg)`,
+      transform: `translate(calc(50vw - 50%), 100%) rotate(${rotation + 90}deg)`,
       boxShadow: `0px 0px 20px 5px ${color}`
   }
   return (
-    <>
+
     <div className='circleContent' style={styles}>
+
+      <div className='circleContentContainer'>
+
+        <div className='projectorsContainer'>
+          <div className='projector'></div>
+          <div className='projector'></div>
+        </div>
+
+        <div className='projectorsContainer'>
+          <div className='projector'></div>
+          <div className='projector'></div>
+        </div>
+
+        <div className='projectorsContainer'>
+          <div className='projector'></div>
+          <div className='projector'></div>
+        </div>
+
+        <div className='projectorsContainer'>
+          <div className='projector'></div>
+          <div className='projector'></div>
+        </div>
+
+      </div>
+
     </div>
 
-    </>
+
 
 
   )
